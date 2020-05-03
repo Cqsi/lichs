@@ -8,3 +8,7 @@ Possible help: https://www.reddit.com/r/chess/comments/cm394n/play_chess_against
 
 3. Are there other useful chess libraries? python-chess?
 4. 
+
+## Links 
+* https://lichess.org/api#operation/apiStreamEvent - Create a "seek", match vs random player, lichess API
+* 
