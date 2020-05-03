@@ -6,4 +6,5 @@ with open("C:\\Users\\Petter\\Desktop\\PythonProjects\\lichess_token.txt") as f:
 session = berserk.TokenSession(token)
 client = berserk.Client(session)
 
-print(client.account.get())
+# Gets your account data, e.g ["id"], ["username"]
+#print(client.account.get())
