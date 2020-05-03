@@ -1,4 +1,5 @@
 import berserk
+import chess
 
 with open("C:\\Users\\Petter\\Desktop\\PythonProjects\\lichess_token.txt") as f:
     token = f.read()

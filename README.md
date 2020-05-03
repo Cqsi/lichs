@@ -7,4 +7,5 @@
 * https://lichess.org/api#tag/Board - Lichess Board API
 
 ## Current Questions
-None.
+
+* How do I connect to the Lichess Board API with Python?
