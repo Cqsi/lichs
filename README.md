@@ -12,4 +12,4 @@ Possible help: https://www.reddit.com/r/chess/comments/cm394n/play_chess_against
 ## Links 
 * https://lichess.org/api - Lichess API
 * https://lichess.org/api#operation/apiBoardSeek - Create a "seek", match vs random player, lichess API
-* 
+* https://berserk.readthedocs.io/en/master/installation.html - Python client for lichess
