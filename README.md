@@ -10,5 +10,6 @@ Possible help: https://www.reddit.com/r/chess/comments/cm394n/play_chess_against
 4. 
 
 ## Links 
+* https://lichess.org/api - Lichess API
 * https://lichess.org/api#operation/apiStreamEvent - Create a "seek", match vs random player, lichess API
 * 
