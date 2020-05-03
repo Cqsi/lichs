@@ -7,9 +7,16 @@ board = chess.Board()
 
 board.push_san("e4")
 board.push_san("e5")
+board.push_san("Nf3")
+board.push_san("d6")
+board.push_san("d4")
 
-print(board)
+# Print the board in the terminal
+# print(board)
+
 boardsvg = chess.svg.board(board=board) 
-f = open("boardSVG", "w")
+f = open("board.SVG", "w")
 f.write(boardsvg)
 f.close()
+
+# To view results in real time, open the file with the VS-code extension "Live server"
