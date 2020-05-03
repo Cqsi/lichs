@@ -7,4 +7,5 @@ session = berserk.TokenSession(token)
 client = berserk.Client(session)
 
 # Gets your account data, e.g ["id"], ["username"]
-#print(client.account.get())
+account_data = client.account.get()
+#print(account_data)
