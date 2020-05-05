@@ -29,13 +29,19 @@ class Game(threading.Thread):
         move_count+=1
         if move_count%2==0:
             print("White moved.")
+            print()
+            
             chess_board.push_uci(game_state["moves"].split()[-1])
             print(chess_board)
+            print()
 
             move = input("Make your move: ")
             self.board.make_move(self.game_id, move)
             chess_board.push_uci(move)
             print(chess_board)
+            print()
+            print("White's turn...")
+
         
         # Another example is moving knight from g8 to f6
         # self.board.make_move(self.game_id, "g8f6")
