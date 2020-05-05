@@ -1,7 +1,12 @@
 import threading
 import chess
 
+chess_board = chess.Board()
+move_count = -1
+
+
 class Game(threading.Thread):
+
     def __init__(self, board, game_id, **kwargs):
         super().__init__(**kwargs)
         self.game_id = game_id
@@ -17,8 +22,20 @@ class Game(threading.Thread):
                 self.handle_chat_line(event)
 
     def handle_state_change(self, game_state):
-        move = input("Make your move: ")
-        self.board.make_move(self.game_id, move)
+        # test code, this program is always black
+        global move_count
+        global chess_board
+
+        move_count+=1
+        if move_count%2==0:
+            print("White moved.")
+            chess_board.push_uci(game_state["moves"].split()[-1])
+            print(chess_board)
+
+            move = input("Make your move: ")
+            self.board.make_move(self.game_id, move)
+            chess_board.push_uci(move)
+            print(chess_board)
         
         # Another example is moving knight from g8 to f6
         # self.board.make_move(self.game_id, "g8f6")
