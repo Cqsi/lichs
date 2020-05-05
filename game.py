@@ -16,7 +16,11 @@ class Game(threading.Thread):
                 self.handle_chat_line(event)
 
     def handle_state_change(self, game_state):
-        print("White moved!!!")
+        # The move is using UCI-format, so you need to specify 
+        self.board.make_move(self.game_id, "e7e5")
+        
+        # Another example is moving knight from g8 to f6
+        # self.board.make_move(self.game_id, "g8f6")
 
     def handle_chat_line(self, chat_line):
         pass
