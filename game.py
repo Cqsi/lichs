@@ -1,4 +1,5 @@
 import threading
+import chess
 
 class Game(threading.Thread):
     def __init__(self, board, game_id, **kwargs):
@@ -16,8 +17,8 @@ class Game(threading.Thread):
                 self.handle_chat_line(event)
 
     def handle_state_change(self, game_state):
-        # The move is using UCI-format, so you need to specify 
-        self.board.make_move(self.game_id, "e7e5")
+        move = input("Make your move: ")
+        self.board.make_move(self.game_id, move)
         
         # Another example is moving knight from g8 to f6
         # self.board.make_move(self.game_id, "g8f6")
