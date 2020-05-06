@@ -4,6 +4,7 @@ import chess
 
 import Game
 
+# change path before release
 with open("C:\\Users\\Petter\\Desktop\\PythonProjects\\lichess_token.txt") as f:
     token = f.read()
 

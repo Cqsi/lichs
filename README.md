@@ -14,3 +14,4 @@
 * ~~Create batch files for commands~~
 * Copy the current files to another folder so one could test the commands and everything playing against oneself instead of against a real player
 * Is the `handle_game_state` (in `game.py`) method reacting to other stuff than moves (draw requsts?)
+* Make try/excep. statements so that the program doesn't crash when the user enters the wrong information (e.g. a move)
