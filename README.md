@@ -11,7 +11,6 @@
 * Fix the code in `game.py`, so that the starting color doen't matter.
 * Switch the board in python-chess depending on what color you are (how to do this?)
 * ~~Create a "seek" (search for opponent) on demand~~
-* Create batch files for commands
-* Create a command handler file (not sure about this yet)
+* ~~Create batch files for commands~~
 * Copy the current files to another folder so one could test the commands and everything playing against oneself instead of against a real player
-
+* Is the `handle_game_state` (in `game.py`) method reacting to other stuff than moves (draw requsts?)
