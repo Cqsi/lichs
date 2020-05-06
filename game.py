@@ -4,7 +4,6 @@ import chess
 import sys
 
 chess_board = chess.Board()
-move_count = 0
 isWhite = True
 color = "Black"
 move_arr = []
@@ -31,13 +30,12 @@ class Game(threading.Thread):
         # big spaghetti code alert, horrible code below needs improvement
         # TODO: What if you're white?
 
-        global move_count
         global chess_board
         global isWhite
         global color
         global move_arr
 
-        if move_count == 0:
+        if len(game_state["moves"].split()) == 0:
             if game_state["white"]["id"] != self.player_id:
                 isWhite = False
                 color = "White"
@@ -51,7 +49,8 @@ class Game(threading.Thread):
             # for now, just quit
 
         elif len(game_state["moves"].split())-1 == len(move_arr):
-            if move_count%2==0:
+            if len(game_state["moves"].split())%2==isWhite: 
+                
                 print(color + " moved.")
                 print()
                 
@@ -60,6 +59,7 @@ class Game(threading.Thread):
                 print()
                 move_arr.append(game_state["moves"].split()[-1])
 
+            else:
                 move = input("Make your move: ")
                 move_arr.append(move)
                 self.board.make_move(self.game_id, move)
@@ -67,8 +67,6 @@ class Game(threading.Thread):
                 print(chess_board)
                 print()
                 print(color + "'s turn...")
-            
-            move_count+=1
             
         else:
             # I believe this case is when the opponent has canceled the game
@@ -78,6 +76,6 @@ class Game(threading.Thread):
     def handle_chat_line(self, chat_line):
         pass
 
-    def handle_draw_state(self, game_state)
+    def handle_draw_state(self, game_state):
         # TODO write this method
         pass

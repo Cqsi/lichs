@@ -26,5 +26,5 @@ for event in board.stream_incoming_events():
         # Post message in chat
         #board.post_message(game_id, "Hello noob!")
     elif event['type'] == 'gameStart':
-        game = Game.Game(board, event['game']['id'])
+        game = Game.Game(board, event['game']['id'], player_id)
         game.start()
