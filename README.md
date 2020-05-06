@@ -8,7 +8,6 @@
 * https://chess.stackexchange.com/questions/28870/render-a-chessboard-from-a-pgn-file - How to save the python-chess board as an SVG-image
 
 ## TODO
-
 * Fix the code in `game.py`, so that the starting color doen't matter.
 * Switch the board in python-chess depending on what color you are (how to do this?)
 * Create a "seek" (search for opponent) on demand
