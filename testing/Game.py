@@ -44,7 +44,10 @@ class Game(threading.Thread):
             # for now, just quit
 
         elif len(game_state["moves"].split())-1 == len(move_arr):
-            if len(game_state["moves"].split())%2==self.isWhite: 
+            if (len(game_state["moves"].split())-1)%2==self.isWhite: 
+
+                # TEST:
+                # isWhite = False = 0
                 
                 print(color + " moved.")
                 print()
@@ -54,7 +57,6 @@ class Game(threading.Thread):
                 print()
                 move_arr.append(game_state["moves"].split()[-1])
 
-            else:
                 move = input("Make your move: ")
                 move_arr.append(move)
                 self.board.make_move(self.game_id, move)
