@@ -74,6 +74,7 @@ class Game(threading.Thread):
             sys.exit
 
     def handle_chat_line(self, chat_line):
+        # TODO write this method
         pass
 
     def handle_draw_state(self, game_state):
