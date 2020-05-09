@@ -44,11 +44,6 @@ class Game(threading.Thread):
         global color
         global move_arr
 
-        if len(game_state["moves"].split()) == 0:
-            if game_state["white"]["id"] != self.player_id:
-                isWhite = False
-                color = "White"
-
         if game_state[color[0].lower() + "draw"] == True:
             handle_draw_state(game_state)
         elif game_state["status"] == "resigned":
