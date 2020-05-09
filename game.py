@@ -7,6 +7,7 @@ chess_board = chess.Board()
 isWhite = True
 color = "Black"
 move_arr = []
+runOnce = True
 
 class Game(threading.Thread):
 
@@ -19,8 +20,16 @@ class Game(threading.Thread):
         self.player_id = player_id
 
     def run(self):
+        global runOnce
+        global color
+        global isWhite
         for event in self.stream:
-            if event['type'] == 'gameState':
+            if event['event'] == 'gameFull' and runOnce:
+                if event["white"]["id"] != self.player_id:
+                    isWhite = False
+                    color = "White"
+                runOnce = False
+            elif event['type'] == 'gameState':
                 self.handle_state_change(event)
             elif event['type'] == 'chatLine':
                 self.handle_chat_line(event)
