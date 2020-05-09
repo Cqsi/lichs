@@ -4,13 +4,12 @@ import chess
 import sys
 
 chess_board = chess.Board()
-color = "Black"
 move_arr = []
 runOnce = True
 
 class Game(threading.Thread):
 
-    def __init__(self, board, game_id, player_id, isWhite, **kwargs):
+    def __init__(self, board, game_id, player_id, isWhite, color, **kwargs):
         super().__init__(**kwargs)
         self.game_id = game_id
         self.board = board
@@ -18,6 +17,10 @@ class Game(threading.Thread):
         self.current_state = next(self.stream)
         self.player_id = player_id
         self.isWhite = isWhite
+        self.color = color
+        if self.isWhite:
+            white_first_move()
+
 
     def run(self):
         for event in self.stream:
@@ -32,10 +35,9 @@ class Game(threading.Thread):
         # TODO: What if you're white?
 
         global chess_board
-        global color
         global move_arr
 
-        if game_state[color[0].lower() + "draw"] == True:
+        if game_state[self.color[0].lower() + "draw"] == True:
             handle_draw_state(game_state)
         elif game_state["status"] == "resigned":
             print("The oppononent resigned. Congrats!")
@@ -44,12 +46,12 @@ class Game(threading.Thread):
             # for now, just quit
 
         elif len(game_state["moves"].split())-1 == len(move_arr):
-            if (len(game_state["moves"].split())-1)%2==self.isWhite: 
+            if (len(game_state["moves"].split())-1)%2==0: 
 
                 # TEST:
                 # isWhite = False = 0
                 
-                print(color + " moved.")
+                print(self.color + " moved.")
                 print()
                 
                 chess_board.push_uci(game_state["moves"].split()[-1])
@@ -63,7 +65,7 @@ class Game(threading.Thread):
                 chess_board.push_uci(move)
                 print(chess_board)
                 print()
-                print(color + "'s turn...")
+                print(self.color + "'s turn...")
             
         else:
             # I believe this case is when the opponent has canceled the game
@@ -77,3 +79,16 @@ class Game(threading.Thread):
     def handle_draw_state(self, game_state):
         # TODO write this method
         pass
+    
+    def white_first_move():
+
+        global chess_board
+        global move_arr
+
+        move = input("Make your move: ")
+        move_arr.append(move)
+        self.board.make_move(self.game_id, move)
+        chess_board.push_uci(move)
+        print(chess_board)
+        print()
+        print(self.color + "'s turn...")
