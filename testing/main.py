@@ -26,5 +26,9 @@ for event in board.stream_incoming_events():
         # Post message in chat
         #board.post_message(game_id, "Hello noob!")
     elif event['type'] == 'gameStart':
-        game = Game.Game(board, event['game']['id'], player_id)
+        #print(client.games.export(event['game']['id']))
+        isWhite = True
+        if player_id != client.games.export(event['game']['id'])['players']['white']['user']['id']:
+            isWhite = False
+        game = Game.Game(board, event['game']['id'], player_id, isWhite)
         game.start()
