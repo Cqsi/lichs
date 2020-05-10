@@ -4,6 +4,8 @@ import chess
 
 import Game
 
+
+# Read the Lichess API token
 with open("C:\\Users\\Petter\\Desktop\\PythonProjects\\lichess_token.txt") as f:
     token = f.read()
 
