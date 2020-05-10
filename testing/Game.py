@@ -44,9 +44,6 @@ class Game(threading.Thread):
 
         else:
             if (len(game_state["moves"].split())-1)%2==self.isWhite: 
-
-                # TEST:
-                # isWhite = False = 0
                 
                 print(self.color + " moved.")
                 print()
@@ -55,28 +52,39 @@ class Game(threading.Thread):
                 print(chess_board)
                 print()
 
-                move = input("Make your move: ")
-                chess_board.push_uci(move)
+                while(True):
+                    try:
+                        move = input("Make your move: ")
+                        self.board.make_move(self.game_id, move)
+                        chess_board.push_uci(move)
+                    except:
+                        print("You can't make that move. Try again!")
+                        continue
+                    break
+
                 print(chess_board)
                 print()
                 print(self.color + "'s turn...")
-                self.board.make_move(self.game_id, move)
 
-    def handle_chat_line(self, chat_line):
-        # TODO write this method
-        pass
 
     def handle_draw_state(self, game_state):
-        print("This method works")
+        # TODO Write this method
         pass
     
     def white_first_move(self):
 
         global chess_board
 
-        move = input("Make your move: ")
-        self.board.make_move(self.game_id, move)
-        chess_board.push_uci(move)
+        print(chess_board)
+        while(True):
+            try:
+                move = input("Make your move: ")
+                self.board.make_move(self.game_id, move)
+                chess_board.push_uci(move)
+            except:
+                print("You can't make that move. Try again!")
+                continue
+            break
         print(chess_board)
         print()
         print(self.color + "'s turn...")
