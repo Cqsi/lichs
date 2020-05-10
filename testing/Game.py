@@ -4,7 +4,6 @@ import chess
 import sys
 
 chess_board = chess.Board()
-move_arr = []
 runOnce = True
 
 class Game(threading.Thread):
@@ -35,10 +34,9 @@ class Game(threading.Thread):
         # TODO: What if you're white?
 
         global chess_board
-        global move_arr
 
         if game_state[self.color[0].lower() + "draw"] == True:
-            handle_draw_state(game_state)
+            self.handle_draw_state(game_state)
         elif game_state["status"] == "resigned":
             print("The oppononent resigned. Congrats!")
             sys.exit()
@@ -57,10 +55,8 @@ class Game(threading.Thread):
                 chess_board.push_uci(game_state["moves"].split()[-1])
                 print(chess_board)
                 print()
-                move_arr.append(game_state["moves"].split()[-1])
 
                 move = input("Make your move: ")
-                move_arr.append(move)
                 chess_board.push_uci(move)
                 print(chess_board)
                 print()
@@ -72,16 +68,14 @@ class Game(threading.Thread):
         pass
 
     def handle_draw_state(self, game_state):
-        # TODO write this method
+        print("This method works")
         pass
     
     def white_first_move(self):
 
         global chess_board
-        global move_arr
 
         move = input("Make your move: ")
-        move_arr.append(move)
         self.board.make_move(self.game_id, move)
         chess_board.push_uci(move)
         print(chess_board)
