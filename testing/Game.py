@@ -33,7 +33,6 @@ class Game(threading.Thread):
         # big spaghetti code alert, if anyone comes up with a better way to this method please submit your code
 
         global chess_board
-        print(game_state)
 
         if game_state[self.color[0].lower() + "draw"] == True:
             self.handle_draw_state(game_state)
