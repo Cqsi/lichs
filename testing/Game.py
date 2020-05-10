@@ -1,7 +1,7 @@
 import threading
 import chess
 
-import sys
+import os
 
 chess_board = chess.Board()
 runOnce = True
@@ -30,16 +30,16 @@ class Game(threading.Thread):
 
     def handle_state_change(self, game_state):
         
-        # big spaghetti code alert, horrible code below needs improvement
-        # TODO: What if you're white?
+        # big spaghetti code alert, if anyone comes up with a better way to this method please submit your code
 
         global chess_board
+        print(game_state)
 
         if game_state[self.color[0].lower() + "draw"] == True:
             self.handle_draw_state(game_state)
-        elif game_state["status"] == "resigned":
+        elif game_state["status"] == "resign":
             print("The oppononent resigned. Congrats!")
-            sys.exit()
+            os._exit(0)
             # TODO make another file for "seeking" so that the player can choose if he/she wants to play again
             # for now, just quit
 

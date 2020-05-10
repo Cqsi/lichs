@@ -1,10 +1,9 @@
 import threading
 import chess
 
-import sys
+import os
 
 chess_board = chess.Board()
-move_arr = []
 runOnce = True
 
 class Game(threading.Thread):
@@ -31,17 +30,16 @@ class Game(threading.Thread):
 
     def handle_state_change(self, game_state):
         
-        # big spaghetti code alert, horrible code below needs improvement
-        # TODO: What if you're white?
+        # big spaghetti code alert, if anyone comes up with a better way to this method please submit your code
 
         global chess_board
-        global move_arr
+        print(game_state)
 
         if game_state[self.color[0].lower() + "draw"] == True:
-            handle_draw_state(game_state)
-        elif game_state["status"] == "resigned":
+            self.handle_draw_state(game_state)
+        elif game_state["status"] == "resign":
             print("The oppononent resigned. Congrats!")
-            sys.exit()
+            os._exit(0)
             # TODO make another file for "seeking" so that the player can choose if he/she wants to play again
             # for now, just quit
 
@@ -57,10 +55,8 @@ class Game(threading.Thread):
                 chess_board.push_uci(game_state["moves"].split()[-1])
                 print(chess_board)
                 print()
-                move_arr.append(game_state["moves"].split()[-1])
 
                 move = input("Make your move: ")
-                move_arr.append(move)
                 chess_board.push_uci(move)
                 print(chess_board)
                 print()
@@ -72,16 +68,14 @@ class Game(threading.Thread):
         pass
 
     def handle_draw_state(self, game_state):
-        # TODO write this method
+        print("This method works")
         pass
     
     def white_first_move(self):
 
         global chess_board
-        global move_arr
 
         move = input("Make your move: ")
-        move_arr.append(move)
         self.board.make_move(self.game_id, move)
         chess_board.push_uci(move)
         print(chess_board)
