@@ -10,4 +10,3 @@
 ## TODO
 * Make it so that the user can see the chat, maybe in an another terminal window.
 * Switch the board in python-chess depending on what color you are (how to do this?)
-* Make try/excep. statements so that the program doesn't crash when the user enters the wrong information (e.g. a move) 
