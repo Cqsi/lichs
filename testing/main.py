@@ -25,8 +25,6 @@ for event in board.stream_incoming_events():
         game_id = event['challenge']['id']
         board.accept_challenge(game_id)
 
-        # Post message in chat
-        #board.post_message(game_id, "Hello noob!")
     elif event['type'] == 'gameStart':
         #print(client.games.export(event['game']['id']))
         isWhite = True

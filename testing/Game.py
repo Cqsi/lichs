@@ -44,7 +44,7 @@ class Game(threading.Thread):
 
         else:
             if (len(game_state["moves"].split())-1)%2==self.isWhite: 
-                
+
                 print(self.color + " moved.")
                 print()
                 
@@ -61,7 +61,7 @@ class Game(threading.Thread):
                         print("You can't make that move. Try again!")
                         continue
                     break
-
+                
                 print(chess_board)
                 print()
                 print(self.color + "'s turn...")
@@ -88,3 +88,20 @@ class Game(threading.Thread):
         print(chess_board)
         print()
         print(self.color + "'s turn...")
+
+    def check_mate(chess_board):
+        if chess_board.result != "*":
+            if chess_board.result == "1-0":
+                if self.isWhite:
+                    print("Congrats! You won by checkmating your opponent!")
+                else:
+                    print("You lose! Your opponent has checkmated you!")
+            elif chess_board.result == "0-1":
+                if self.isWhite:
+                    print("You lose! Your opponent has checkmated you!")
+                else:
+                    print("Congrats! You won by checkmating your opponent!")
+            elif chess_board.result == "1/2-1/2":
+                print("The game ended in a stalemate (draw)!")
+            print("Thanks for playing!")
+            os._exit(0)

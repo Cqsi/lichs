@@ -38,6 +38,7 @@ for event in board.stream_incoming_events():
     if event['type'] == 'gameStart':
         isWhite = True
         color = "Black" # We set the color to the opposite color of the player
+        
         if player_id != client.games.export(event['game']['id'])['players']['white']['user']['id']:
             isWhite = False
             color = "White"
