@@ -52,6 +52,8 @@ class Game(threading.Thread):
                 print(chess_board)
                 print()
 
+                self.check_mate(chess_board)
+
                 while(True):
                     try:
                         move = input("Make your move: ")
@@ -63,6 +65,7 @@ class Game(threading.Thread):
                     break
                 
                 print(chess_board)
+                self.check_mate(chess_board)
                 print()
                 print(self.color + "'s turn...")
 
@@ -89,19 +92,20 @@ class Game(threading.Thread):
         print()
         print(self.color + "'s turn...")
 
-    def check_mate(chess_board):
-        if chess_board.result != "*":
-            if chess_board.result == "1-0":
+    def check_mate(self, chess_board):
+        if str(chess_board.result()) != "*":
+            if chess_board.result() == "1-0":
                 if self.isWhite:
                     print("Congrats! You won by checkmating your opponent!")
                 else:
                     print("You lose! Your opponent has checkmated you!")
-            elif chess_board.result == "0-1":
+            elif chess_board.result() == "0-1":
                 if self.isWhite:
                     print("You lose! Your opponent has checkmated you!")
                 else:
                     print("Congrats! You won by checkmating your opponent!")
-            elif chess_board.result == "1/2-1/2":
+            elif chess_board.result() == "1/2-1/2":
                 print("The game ended in a stalemate (draw)!")
+
             print("Thanks for playing!")
             os._exit(0)

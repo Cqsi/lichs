@@ -1,1 +1,0 @@
-s.export(event['game']['id'])['players'][
