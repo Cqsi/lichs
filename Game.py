@@ -33,7 +33,6 @@ class Game(threading.Thread):
         # big spaghetti code alert, if anyone comes up with a better way to this method please submit your code
 
         global chess_board
-        print(game_state)
 
         if game_state[self.color[0].lower() + "draw"] == True:
             self.handle_draw_state(game_state)
@@ -46,9 +45,6 @@ class Game(threading.Thread):
         else:
             if (len(game_state["moves"].split())-1)%2==self.isWhite: 
 
-                # TEST:
-                # isWhite = False = 0
-                
                 print(self.color + " moved.")
                 print()
                 
@@ -56,28 +52,60 @@ class Game(threading.Thread):
                 print(chess_board)
                 print()
 
-                move = input("Make your move: ")
-                chess_board.push_uci(move)
+                self.check_mate(chess_board)
+
+                while(True):
+                    try:
+                        move = input("Make your move: ")
+                        self.board.make_move(self.game_id, move)
+                        chess_board.push_uci(move)
+                    except:
+                        print("You can't make that move. Try again!")
+                        continue
+                    break
+                
                 print(chess_board)
+                self.check_mate(chess_board)
                 print()
                 print(self.color + "'s turn...")
-                self.board.make_move(self.game_id, move)
 
-    def handle_chat_line(self, chat_line):
-        # TODO write this method
-        pass
 
     def handle_draw_state(self, game_state):
-        print("This method works")
+        # TODO Write this method
         pass
     
     def white_first_move(self):
 
         global chess_board
 
-        move = input("Make your move: ")
-        self.board.make_move(self.game_id, move)
-        chess_board.push_uci(move)
+        print(chess_board)
+        while(True):
+            try:
+                move = input("Make your move: ")
+                self.board.make_move(self.game_id, move)
+                chess_board.push_uci(move)
+            except:
+                print("You can't make that move. Try again!")
+                continue
+            break
         print(chess_board)
         print()
         print(self.color + "'s turn...")
+
+    def check_mate(self, chess_board):
+        if str(chess_board.result()) != "*":
+            if chess_board.result() == "1-0":
+                if self.isWhite:
+                    print("Congrats! You won by checkmating your opponent!")
+                else:
+                    print("You lose! Your opponent has checkmated you!")
+            elif chess_board.result() == "0-1":
+                if self.isWhite:
+                    print("You lose! Your opponent has checkmated you!")
+                else:
+                    print("Congrats! You won by checkmating your opponent!")
+            elif chess_board.result() == "1/2-1/2":
+                print("The game ended in a stalemate (draw)!")
+
+            print("Thanks for playing!")
+            os._exit(0)
