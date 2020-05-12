@@ -16,7 +16,7 @@ Lichess Terminal uses the Lichess API (more exactly [berserk](https://github.com
 
 1. Click [here](https://lichess.org/account/oauth/token/create) and log in with your Lichess account if needed
 2. Name the token anything (e.g. MyToken)
-3. Scroll down and enable the button `Play games with the board API`.
+3. Scroll down and enable the button `Play games with the board API`
 4. Click the button `Submit` in the lower right corner
 5. Copy the token shown in the brown box
 6. Put the token in the `api_key.txt` file (<ins>and nothing else in there</ins>)
@@ -50,7 +50,12 @@ Searching after opponent...
 An opponent was found!
 ```
 
+Then the program will let you know whether you're the color white or black. After that you will start playing; the program will output the board after every move and ask for your move when it's your turn.
 
+<ins>IMPORTANT:</ins>
+When the program asks for your move, you need to input the move in UCI-format. In UCI-format you specify from <ins>where to where</ins> the move will take place. You don't need to specify what type of piece your moving, the program will know what piece is in the given position.
+
+An example of UCI-format would be `e2e4`. That would move the pawn from `e2` to `e4`.
 
 
 ## How to contribute?
