@@ -12,9 +12,9 @@ Lichess Terminal uses the Lichess API (more exactly [berserk](https://github.com
 this is the installation section.
 
 ## Usage
-You start playing by typing
+You start playing by typing the command `lichess` into the Windows Command Prompt:
 ```
-lichess
+C:\> lichess
 ```
 
 
