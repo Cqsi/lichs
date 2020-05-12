@@ -4,7 +4,7 @@
 * Version v1.0
 * Operating System: Only Windows for now (see [TODO](https://github.com/Cqsi/lichess_terminal#todo-and-current-questions))
 
-Lichess Terminal uses the Lichess API to make it possible for you to play against other real players directly in the terminal.
+Lichess Terminal uses the Lichess API to make it possible for you to play against other real players directly in the terminal. <ins>This project is still in its early stages, and there's probably some bugs</ins>.
 
 ## Installation
 this is the installation section.
