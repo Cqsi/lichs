@@ -19,7 +19,7 @@ Lichess Terminal uses the Lichess API (more exactly [berserk](https://github.com
 3. Scroll down and enable the button `Play games with the board API`.
 4. Click the button `Submit` in the lower right corner
 5. Copy the token shown in the brown box
-6. Put the token in the `api_key.txt` file (and nothing else in there)
+6. Put the token in the `api_key.txt` file (<ins>and nothing else in there</ins>)
 
 ## Usage
 
