@@ -10,7 +10,6 @@
 
 Lichess Terminal uses the Lichess API (more exactly [berserk](https://github.com/rhgrant10/berserk)) to make it possible for you to play against other real players directly in the terminal on Lichess servers. <ins>This project is still in its early stages; there's no chat support, pretty bad graphics, no ranked games and probably some bugs.</ins>
 
-<br>
 
 ## Installation
 
@@ -23,7 +22,6 @@ Lichess Terminal uses the Lichess API (more exactly [berserk](https://github.com
 5. Copy the token shown in the brown box
 6. Put the token in the `api_key.txt` file (<ins>and nothing else in there</ins>)
 
-<br>
 
 ## Usage
 
@@ -68,7 +66,6 @@ R N B Q K B N R
 ```
 Above is an example of the board displayed.
 
-<br>
 
 ### Important
 When the program asks for your move, you need to input the move in UCI-format. In UCI-format you specify from <ins>where to where</ins> the move will take place. You don't need to specify what type of piece your moving, the program will know what piece is in the given position.
@@ -77,7 +74,6 @@ An example of UCI-format would be `e2e4`. That would move the piece on `e2` to `
 
 The program will inform you if you can't make the move you have input. 
 
-<br>
 
 ## How to contribute?
 ### TODO and Current Questions
