@@ -1,6 +1,6 @@
 # Lichess Terminal
 
-![Terminal Lichess]()
+![Terminal Lichess](docs/images/lichess.png)
 
 ## Info
 * Version v1.0
