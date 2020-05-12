@@ -2,11 +2,10 @@
 
 ## Info
 * Version v1.0
+* <ins>Uses Lichess</ins>, which means that you need to have a Lichess account
 * Operating System: Only Windows for now (see [TODO](https://github.com/Cqsi/lichess_terminal#todo-and-current-questions))
 
-Lichess Terminal uses the Lichess API (more exactly [berserk](https://github.com/rhgrant10/berserk)) to make it possible for you to play against other real players directly in the terminal.
-
-<ins>This project is still in its early stages, and there's probably some bugs</ins>.
+Lichess Terminal uses the Lichess API (more exactly [berserk](https://github.com/rhgrant10/berserk)) to make it possible for you to play against other real players directly in the terminal on Lichess servers. <ins>This project is still in its early stages; there's no chat support, pretty bad graphics and probably some bugs.</ins>
 
 ## Installation
 this is the installation section.
