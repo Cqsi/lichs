@@ -2,11 +2,10 @@
 
 ![Terminal Lichess](docs/images/lichess.png)
 
-## Info
-* Version v1.0
+## Info and requirements
 * <ins>Uses Lichess</ins>, which means that you need to have a Lichess account
 * Operating System: Only Windows for now (see [TODO](https://github.com/Cqsi/lichess_terminal#todo-and-current-questions))
-* Only Classical and Rapid games because the Lichess API doesn't allow anything else
+* Only Classical and Rapid games because the Lichess API doesn't allow anything else (quite frankly, Blitz and Bullet like games wouldn't be a lot of fun since you would have to input the coordinates really fast)
 
 Lichess Terminal uses the Lichess API (more exactly [berserk](https://github.com/rhgrant10/berserk)) to make it possible for you to play against other real players directly in the terminal on Lichess servers. <ins>This project is still in its early stages; there's no chat support, pretty bad graphics, no ranked games and probably some bugs.</ins>
 
@@ -64,7 +63,7 @@ p p p p p p p p
 P P P P . P P P
 R N B Q K B N R
 ```
-Above is an example of the board displayed.
+Above is an example of the board displayed. <ins>Note:</ins> at the moment the board is always displayed from the white's side, because I don't know how to fix this.
 
 
 ### Important
