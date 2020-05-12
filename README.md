@@ -16,7 +16,7 @@ You start playing by typing the command `lichess` into the Windows Command Promp
 ```
 C:\> lichess
 ```
-
+That will take you to the intro screen
 
 
 ## How to contribute?
