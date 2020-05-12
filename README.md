@@ -6,13 +6,16 @@
 * Operating System: Only Windows for now (see [TODO](https://github.com/Cqsi/lichess_terminal#todo-and-current-questions))
 * Only Classical and Rapid games because the Lichess API doesn't allow anything else
 
-Lichess Terminal uses the Lichess API (more exactly [berserk](https://github.com/rhgrant10/berserk)) to make it possible for you to play against other real players directly in the terminal on Lichess servers. <ins>This project is still in its early stages; there's no chat support, pretty bad graphics and probably some bugs.</ins>
+Lichess Terminal uses the Lichess API (more exactly [berserk](https://github.com/rhgrant10/berserk)) to make it possible for you to play against other real players directly in the terminal on Lichess servers. <ins>This project is still in its early stages; there's no chat support, pretty bad graphics, no ranked games and probably some bugs.</ins>
 
 ## Installation
 this is the installation section.
 
 ## Usage
-this is the usage section.
+You start playing by typing
+```
+lichess
+```
 
 
 
