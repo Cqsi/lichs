@@ -33,9 +33,13 @@ else:
     sys.exit()
 
 board.seek(time, 0)
+print("Searching after opponent...")
 
 for event in board.stream_incoming_events():
     if event['type'] == 'gameStart':
+
+        print("An opponent was found!")
+
         isWhite = True
         color = "Black" # We set the color to the opposite color of the player
         

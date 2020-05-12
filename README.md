@@ -30,6 +30,15 @@ What kind of chess do you want to play?
 Enter 1 or 2:
 ```
 
+That should be pretty self-explanatory, you basically choose between Rapid and Classical (the Lichess API doens't suppot anything else) by entering either 1 or 2. The timing of the games is also listed there; Rapid is 10min and Classical 30min (without extra-time, I might add support for extra-time later)
+
+When you have input either 1 or 2, the program will start to search after an opponent. It shouldn't take long and the game should start pretty quickly.
+
+```
+Searching after opponent...
+An opponent was found!
+```
+
 
 ## How to contribute?
 ### TODO and Current Questions
