@@ -4,7 +4,9 @@
 * Version v1.0
 * Operating System: Only Windows for now (see [TODO](https://github.com/Cqsi/lichess_terminal#todo-and-current-questions))
 
-Lichess Terminal uses the Lichess API to make it possible for you to play against other real players directly in the terminal. <ins>This project is still in its early stages, and there's probably some bugs</ins>.
+Lichess Terminal uses the Lichess API (more exactly [berserk](https://github.com/rhgrant10/berserk)) to make it possible for you to play against other real players directly in the terminal.
+
+<ins>This project is still in its early stages, and there's probably some bugs</ins>.
 
 ## Installation
 this is the installation section.
@@ -24,6 +26,6 @@ this is the usage section.
 ### Useful links 
 * https://lichess.org/api - Lichess API
 * https://lichess.org/api#operation/apiBoardSeek - Create a "seek", match vs random player, lichess API
-* https://berserk.readthedocs.io/en/master/installation.html - Python client for lichess
+* https://berserk.readthedocs.io/en/master/installation.html - Python client for the Lichess API
 * https://lichess.org/api#tag/Board - Lichess Board API
 * https://chess.stackexchange.com/questions/28870/render-a-chessboard-from-a-pgn-file - How to save the python-chess board as an SVG-image
