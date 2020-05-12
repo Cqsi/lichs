@@ -1,5 +1,9 @@
 # Lichess in terminal
 
+## Usage
+this is the usage section.
+
+
 
 ## How to contribute?
 ### TODO and Current Questions
