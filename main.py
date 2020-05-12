@@ -46,6 +46,9 @@ for event in board.stream_incoming_events():
         if player_id != client.games.export(event['game']['id'])['players']['white']['user']['id']:
             isWhite = False
             color = "White"
+            print("You're playing as black!")
             print("White's turn...")
+        else:
+            print("You're playing as white!")
         game = Game.Game(board, event['game']['id'], player_id, isWhite, color)
         game.start()
