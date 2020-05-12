@@ -13,10 +13,22 @@ this is the installation section.
 
 ## Usage
 You start playing by typing the command `lichess` into the Windows Command Prompt:
+
 ```
 C:\> lichess
 ```
-That will take you to the intro screen
+
+That will take you to the intro screen:
+
+```
+Welcome to Lichess!
+
+What kind of chess do you want to play?
+1. Rapid (10+0)
+2. Classical (30+0)
+
+Enter 1 or 2:
+```
 
 
 ## How to contribute?
