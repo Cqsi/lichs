@@ -55,7 +55,19 @@ An opponent was found!
 ```
 
 Then the program will let you know whether you're the color white or black. After that you will start playing; the program will output the board after every move and ask for your move when it's your turn.
-<br>
+
+```
+r n b q k b n r
+p p p p p p p p
+. . . . . . . .
+. . . . . . . .
+. . . . . . . .
+. . . . P . . .
+P P P P . P P P
+R N B Q K B N R
+```
+Above is an example of the board displayed.
+
 <br>
 
 ### Important
