@@ -1,5 +1,7 @@
 # Lichess in terminal
 
+
+## How to contribute?
 ### TODO and Current Questions
 * Make it so that the user can see the chat, maybe in an another terminal window. My plan was to create a second command (e.g. "lichess chat) so that you can open a second terminal window and type the command and then get the chat displayed.
 * How do you change the POV (Point Of View) of the chessboard in python-chess? Is it even possible? The current program displays everything from the white's side so if you're black it might be a little weird.
