@@ -11,7 +11,15 @@
 Lichess Terminal uses the Lichess API (more exactly [berserk](https://github.com/rhgrant10/berserk)) to make it possible for you to play against other real players directly in the terminal on Lichess servers. <ins>This project is still in its early stages; there's no chat support, pretty bad graphics, no ranked games and probably some bugs.</ins>
 
 ## Installation
-this is the installation section.
+
+### How to generate a personal API token
+
+1. Click [here](https://lichess.org/account/oauth/token/create) and log in with your Lichess account if needed
+2. Name the token anything (e.g. MyToken)
+3. Scroll down and enable the button `Play games with the board API`.
+4. Click the button `Submit` in the lower right corner
+5. Copy the token shown in the brown box
+6. Put the token in the `api_key.txt` file (and nothing else in there)
 
 ## Usage
 
