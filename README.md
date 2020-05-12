@@ -1,5 +1,7 @@
 # Lichess Terminal
 
+![Terminal Lichess]()
+
 ## Info
 * Version v1.0
 * <ins>Uses Lichess</ins>, which means that you need to have a Lichess account
