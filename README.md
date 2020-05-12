@@ -52,10 +52,12 @@ An opponent was found!
 
 Then the program will let you know whether you're the color white or black. After that you will start playing; the program will output the board after every move and ask for your move when it's your turn.
 
-<ins>IMPORTANT:</ins>
+### Important
 When the program asks for your move, you need to input the move in UCI-format. In UCI-format you specify from <ins>where to where</ins> the move will take place. You don't need to specify what type of piece your moving, the program will know what piece is in the given position.
 
-An example of UCI-format would be `e2e4`. That would move the pawn from `e2` to `e4`.
+An example of UCI-format would be `e2e4`. That would move the piece on `e2` to `e4` (as a start-move it's the pawn). Just to get this clear; `Nf3` <ins>wouldn't work</ins>.
+
+The program will inform you if you can't make the move you have input. 
 
 
 ## How to contribute?
