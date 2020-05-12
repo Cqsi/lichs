@@ -1,4 +1,4 @@
-# Lichess in terminal
+# Lichess Terminal
 
 ## Info
 * Version v1.0
