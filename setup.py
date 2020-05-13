@@ -12,14 +12,14 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/Cqsi/lichess_terminal",
-    packages=["lichess-terminal"],
+    packages=["lichess_terminal"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
         "Operating System :: Windows",
     ],
     python_requires='>=3.6',
-    install_requires=["python-chess", "berserk"]
+    install_requires=["python-chess", "berserk"],
     entry_points={
         "console_scripts": [
             "lichess=lichess_terminal.__main__:main",
