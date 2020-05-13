@@ -1,0 +1,6 @@
+# Build files
+dist/
+
+# Others
+__pycache__
+testing/__pycache__
