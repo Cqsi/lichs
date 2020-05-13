@@ -15,8 +15,7 @@ setuptools.setup(
     packages=["lichess_terminal"],
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: Windows",
+        "License :: OSI Approved :: MIT License"
     ],
     python_requires='>=3.6',
     install_requires=["python-chess", "berserk"],
