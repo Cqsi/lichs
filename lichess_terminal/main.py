@@ -8,7 +8,7 @@ import Game
 def main():
 
     try:
-        with open("api_key.txt") as f:
+        with open("key.txt") as f:
             token = f.read()
         session = berserk.TokenSession(token)
         client = berserk.clients.Client(session)
