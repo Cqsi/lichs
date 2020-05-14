@@ -1,6 +1,7 @@
 # Lichess Terminal
 
-![Terminal Lichess](https://github.com/Cqsi/lichess_terminal/blob/master/docs/images/lichess.png)
+![Terminal Lichess](https://github.com/Cqsi/lichess_terminal/blob/master/docs/images/lichess.png?raw=true)
+
 
 ## Info and requirements
 * Uses Lichess, which means that you need to have a Lichess account
