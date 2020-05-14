@@ -1,6 +1,7 @@
 import sys
 import berserk
 import chess
+import os
 
 import Game
 
