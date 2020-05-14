@@ -5,13 +5,15 @@ import chess
 import Game
 
 
-# Read the Lichess API token
-with open("C:\\Users\\Petter\\Desktop\\PythonProjects\\lichess_token.txt") as f:
-    token = f.read()
-
-session = berserk.TokenSession(token)
-client = berserk.clients.Client(session)
-board = berserk.clients.Board(session)
+try:
+    with open("..\\api_key.txt") as f:
+        token = f.read()
+    session = berserk.TokenSession(token)
+    client = berserk.clients.Client(session)
+    board = berserk.clients.Board(session)
+except:
+    print("The API-key is either empty or wrong. Please run the command 'lichesskey' and input your API-key correctly. If you need more help, please see the instructions in the Github README: \nhttps://github.com/Cqsi/lichess_terminal#how-to-generate-a-personal-api-token")
+    os._exit(0)
 
 # Gets your account data, e.g ["id"], ["username"]
 account_data = client.account.get()

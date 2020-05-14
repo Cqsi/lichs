@@ -39,8 +39,6 @@ class Game(threading.Thread):
         elif game_state["status"] == "resign":
             print("The oppononent resigned. Congrats!")
             os._exit(0)
-            # TODO make another file for "seeking" so that the player can choose if he/she wants to play again
-            # for now, just quit
 
         else:
             if (len(game_state["moves"].split())-1)%2==self.isWhite: 
@@ -57,6 +55,8 @@ class Game(threading.Thread):
                 while(True):
                     try:
                         move = input("Make your move: ")
+                        if move.lower() == "resign":
+                            self.board.resign_game(self.game_id)
                         self.board.make_move(self.game_id, move)
                         chess_board.push_uci(move)
                     except:
