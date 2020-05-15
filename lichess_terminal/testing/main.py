@@ -7,7 +7,7 @@ import Game
 
 
 try:
-    with open("..\\key.txt") as f:
+    with open(sys.path[0] + "..\\key.txt") as f:
         token = f.read()
     session = berserk.TokenSession(token)
     client = berserk.clients.Client(session)

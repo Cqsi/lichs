@@ -1,8 +1,8 @@
 import sys
 
 def set_api():
-    key = sys.argv[0]
+    key = sys.argv[1]
     
-    file = open("key.txt", "w")
+    file = open(sys.path[0] + "key.txt", "w")
     file.write(key)
     file.close()
