@@ -78,6 +78,7 @@ The program will inform you if you can't make the move you have input.
 ## How to contribute?
 ### TODO and Current Questions
 * This program only works on Windows at the moment, can anyone make the Linux and macOS equivalent of the batch-file found in the `batch` folder?
+* Addd ability for user to see how much time he/she has left
 * Add support for ranked games
 * Add the possibility to offer a draw
 * The chessboard that is displayed isn't very nice looking (it's just letters and dots!), but I'm unsure whether CMD allows much better graphics. The goal would be to create something like [this](https://www.reddit.com/r/chess/comments/cm394n/play_chess_against_stockfish_in_your_terminal/) on other systems like Linux for example.

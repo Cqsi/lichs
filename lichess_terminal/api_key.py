@@ -1,8 +1,10 @@
 import sys
+import pathlib
 
-def set_api():
-    key = sys.argv[1]
+def set_api(key):
+    print("THIS RUNS")
+    print(str(pathlib.Path(__file__).parent.absolute()) + "key.txt")
     
-    file = open(sys.path[0] + "key.txt", "w")
+    file = open(str(pathlib.Path(__file__).parent.absolute()) + "key.txt", "w")
     file.write(key)
     file.close()

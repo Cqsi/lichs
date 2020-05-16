@@ -1,3 +1,3 @@
 @echo off
-cd %~dp0\..\
-python main.py %1
+cd %~dp0\..\lichess_terminal\
+python __main__.py %1

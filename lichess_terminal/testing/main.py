@@ -2,12 +2,13 @@ import sys
 import berserk
 import chess
 import os
+import pathlib
 
 import Game
 
 
 try:
-    with open(sys.path[0] + "..\\key.txt") as f:
+    with open(pathlib.Path(__file__).parent.absolute() + "..\\key.txt") as f:
         token = f.read()
     session = berserk.TokenSession(token)
     client = berserk.clients.Client(session)

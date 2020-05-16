@@ -82,12 +82,17 @@ class Game(threading.Thread):
         while(True):
             try:
                 move = input("Make your move: ")
-                self.board.make_move(self.game_id, move)
-                chess_board.push_uci(move)
+                if move.lower() == "resign":
+                    self.board.resign_game(self.game_id)
+                    os._exit(0)
+                else:
+                    self.board.make_move(self.game_id, move)
+                    chess_board.push_uci(move)
             except:
                 print("You can't make that move. Try again!")
                 continue
             break
+                
         print(chess_board)
         print()
         print(self.color + "'s turn...")

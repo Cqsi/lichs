@@ -2,13 +2,18 @@ import sys
 import os
 import berserk
 import chess
+import pathlib
 
-import Game
+#from .Game import Game
+#from .api_key import set_api
+
+from Game import Game
+from api_key import set_api
 
 def main():
 
     try:
-        with open(sys.path[0] + "key.txt") as f:
+        with open(str(pathlib.Path(__file__).parent.absolute()) + "key.txt") as f:
             token = f.read()
         session = berserk.TokenSession(token)
         client = berserk.clients.Client(session)
@@ -55,8 +60,12 @@ def main():
                 print("White's turn...")
             else:
                 print("You're playing as white!")
-            game = Game.Game(board, event['game']['id'], player_id, isWhite, color)
+            game = Game(board, event['game']['id'], player_id, isWhite, color)
             game.start()
         
 if __name__=="__main__":
-    main()
+    try:
+        print(sys.argv[1])
+        set_api(sys.argv[1])
+    except:
+        main()

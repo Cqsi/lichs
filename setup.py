@@ -5,7 +5,7 @@ with open("docs\\PYPIREADME.md", "r") as f:
 
 setuptools.setup(
     name="lichess-terminal",
-    version="1.4",
+    version="2.6",
     author="Casimir Rönnlöf",
     author_email="casimirr04@gmail.com",
     description="Play chess against other real players in your terminal using Lichess",
@@ -21,8 +21,7 @@ setuptools.setup(
     install_requires=["python-chess", "berserk"],
     entry_points={
         "console_scripts": [
-            "lichess=lichess_terminal.__main__:main",
-            "lichesskey=lichess_terminal.api_key:set_api"
+            "lichess=lichess_terminal.__main__:main"
         ]
     },
     
