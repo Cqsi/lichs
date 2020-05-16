@@ -57,6 +57,8 @@ class Game(threading.Thread):
                         move = input("Make your move: ")
                         if move.lower() == "resign":
                             self.board.resign_game(self.game_id)
+                            print("You resigned the game!")
+                            print("Thanks for playing!")
                             os._exit(0)
                         else:
                             self.board.make_move(self.game_id, move)

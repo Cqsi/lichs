@@ -5,7 +5,7 @@ with open("docs\\PYPIREADME.md", "r") as f:
 
 setuptools.setup(
     name="lichess-terminal",
-    version="2.6",
+    version="1.0.0",
     author="Casimir Rönnlöf",
     author_email="casimirr04@gmail.com",
     description="Play chess against other real players in your terminal using Lichess",
