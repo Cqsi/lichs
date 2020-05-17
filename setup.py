@@ -5,14 +5,14 @@ with open("docs\\PYPIREADME.md", "r") as f:
 
 setuptools.setup(
     name="lichs",
-    version="1.0.1",
+    version="1.0.0",
     author="Casimir Rönnlöf",
     author_email="casimirr04@gmail.com",
     description="Play chess against other real players in your terminal using Lichess",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/Cqsi/lichess_terminal",
-    packages=["lichess_terminal"],
+    url="https://github.com/Cqsi/lichs",
+    packages=["lichs"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License"
@@ -21,7 +21,7 @@ setuptools.setup(
     install_requires=["python-chess", "berserk"],
     entry_points={
         "console_scripts": [
-            "lichess=lichess_terminal.__main__:main"
+            "lichs=lichs.__main__:main"
         ]
     },
     

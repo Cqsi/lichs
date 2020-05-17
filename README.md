@@ -1,4 +1,4 @@
-# Lichess Terminal
+# Lichs
 
 ![Terminal Lichess](docs/images/lichess.png)
 
@@ -8,7 +8,7 @@
 * Only Classical and Rapid games because the Lichess API doesn't allow anything else (quite frankly, Blitz and Bullet like games wouldn't be a lot of fun since you would have to input the coordinates really fast)
 * This program uses UCI-format for inputing moves, see the [important section](https://github.com/Cqsi/lichess_terminal#important)
 
-Lichess Terminal uses the Lichess API (more exactly [berserk](https://github.com/rhgrant10/berserk)) to make it possible for you to play against other real players directly in the terminal on Lichess servers. <ins>This project is still in its early stages; there's no chat support, pretty bad graphics, no ranked games and probably some bugs.</ins>
+Lichs uses the Lichess API (more exactly [berserk](https://github.com/rhgrant10/berserk)) to make it possible for you to play against other real players directly in the terminal on Lichess servers. <ins>This project is still in its early stages; there's no chat support, pretty bad graphics, no ranked games and probably some bugs.</ins>
 
 
 ## Installation
@@ -25,10 +25,10 @@ Lichess Terminal uses the Lichess API (more exactly [berserk](https://github.com
 
 ## Usage
 
-You start playing by typing the command `lichess` into the Windows Command Prompt:
+You start playing by typing the command `lichs` into the Windows Command Prompt:
 
 ```
-C:\> lichess
+C:\> lichs
 ```
 
 That will take you to the intro screen:
@@ -78,7 +78,8 @@ The program will inform you if you can't make the move you have input.
 ## How to contribute?
 ### TODO and Current Questions
 * This program only works on Windows at the moment, can anyone make the Linux and macOS equivalent of the batch-file found in the `batch` folder?
-* Addd ability for user to see how much time he/she has left
+* Add ability to offer a draw
+* Add ability for user to see how much time he/she has left
 * Add support for ranked games
 * Add the possibility to offer a draw
 * The chessboard that is displayed isn't very nice looking (it's just letters and dots!), but I'm unsure whether CMD allows much better graphics. The goal would be to create something like [this](https://www.reddit.com/r/chess/comments/cm394n/play_chess_against_stockfish_in_your_terminal/) on other systems like Linux for example.

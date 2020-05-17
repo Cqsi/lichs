@@ -7,8 +7,8 @@ import pathlib
 #from .Game import Game
 #from .api_key import set_api
 
-from lichess_terminal.Game import Game
-from lichess_terminal.api_key import set_api
+from lichs.Game import Game
+from lichs.api_key import set_api
 
 def main():
 
