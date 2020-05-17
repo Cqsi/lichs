@@ -20,7 +20,7 @@ C:\> pip install lichs
 ```
 and the program will be installed. The next step is to generate a personal API-key.
 
-### How to generate a personal API token
+### How to generate a personal API-key
 
 1. Click [here](https://lichess.org/account/oauth/token/create) and log in with your Lichess account if needed
 2. Name the token anything (e.g. MyToken)
@@ -84,7 +84,6 @@ The program will inform you if you can't make the move you have input.
 
 ## How to contribute?
 ### TODO and Current Questions
-* This program only works on Windows at the moment, can anyone make the Linux and macOS equivalent of the batch-file found in the `batch` folder?
 * Add ability to offer a draw
 * Add ability for user to see how much time he/she has left
 * Add support for ranked games
