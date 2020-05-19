@@ -1,0 +1,3 @@
+[console_scripts]
+lichs = lichs.__main__:main
+

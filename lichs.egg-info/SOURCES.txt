@@ -1,0 +1,11 @@
+README.md
+setup.py
+lichs/Game.py
+lichs/__main__.py
+lichs/api_key.py
+lichs.egg-info/PKG-INFO
+lichs.egg-info/SOURCES.txt
+lichs.egg-info/dependency_links.txt
+lichs.egg-info/entry_points.txt
+lichs.egg-info/requires.txt
+lichs.egg-info/top_level.txt

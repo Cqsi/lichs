@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: lichs
+Version: 1.0.1
+Summary: Play chess against other real players in your terminal using Lichess
+Home-page: https://github.com/Cqsi/lichs
+Author: Casimir Rönnlöf
+Author-email: casimirr04@gmail.com
+License: UNKNOWN
+Description: # Lichess Terminal
+        
+        Check [the Github repository](https://github.com/Cqsi/lichess_terminal/blob/master/README.md) for a README.
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
