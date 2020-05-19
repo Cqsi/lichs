@@ -20,14 +20,14 @@ $ pip install lichs
 ```
 and the program will be installed. The next step is to generate a personal API-key.
 
-### How to generate a personal API-key
+### How to generate a personal API token
 
 1. Click [here](https://lichess.org/account/oauth/token/create) and log in with your Lichess account if needed
 2. Name the token anything (e.g. MyToken)
 3. Scroll down and enable the button `Play games with the board API`
 4. Click the button `Submit` in the lower right corner
 5. Copy the token shown in the brown box
-6. Jump into your terminal and write `lichs <api_key>` (put your API-key instead of `<api_key>`) and run the command. To get this clear, an example would have been `lichs lzRceo5XOUND74Lm`. You should then see a message to confirm that the API-key has been saved. 
+6. Jump into your terminal and write `lichs <api_token>` (put your API token instead of `<api_token>`) and run the command. To get this clear, an example would have been `lichs lzRceo5XOUND74Lm`. You should then see a message to confirm that the API token has been saved. 
 
 
 ## Usage
