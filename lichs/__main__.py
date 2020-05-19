@@ -23,7 +23,7 @@ def main():
             client = berserk.clients.Client(session)
             board = berserk.clients.Board(session)
         except:
-            print("The API-key is either empty or wrong. Please run the command 'lichess' and input your API-key as a second argument, i.e 'lichess <api_key>'. If you need more help, please see the instructions in the Github README: \nhttps://github.com/Cqsi/lichess_terminal#how-to-generate-a-personal-api-token")
+            print("The API token is either empty or wrong. Please run the command 'lichess' and input your API token as a second argument, i.e 'lichs <api_token>'. If you need more help, please see the instructions in the Github README: \nhttps://github.com/Cqsi/lichs#how-to-generate-a-personal-api-token")
             os._exit(0)
 
         # Gets your account data, e.g ["id"], ["username"]
