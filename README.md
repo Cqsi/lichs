@@ -16,7 +16,7 @@ Lichs uses the Lichess API (more exactly [berserk](https://github.com/rhgrant10/
 This package is available on [PyPi](https://pypi.org/project/lichs/), therefore just run:
 
 ```
-C:\> pip install lichs
+$ pip install lichs
 ```
 and the program will be installed. The next step is to generate a personal API-key.
 
@@ -27,15 +27,15 @@ and the program will be installed. The next step is to generate a personal API-k
 3. Scroll down and enable the button `Play games with the board API`
 4. Click the button `Submit` in the lower right corner
 5. Copy the token shown in the brown box
-6. Jump into CMD and write `lichs <api_key>` (put your API-key instead of `<api_key>`) and run the command. To get this clear, an example would have been `lichs lzRceo5XOUND74Lm`. You should then see a message to confirm that the API-key has been saved. 
+6. Jump into your terminal and write `lichs <api_key>` (put your API-key instead of `<api_key>`) and run the command. To get this clear, an example would have been `lichs lzRceo5XOUND74Lm`. You should then see a message to confirm that the API-key has been saved. 
 
 
 ## Usage
 
-You start playing by typing the command `lichs` into the Windows Command Prompt:
+You start playing by typing the command `lichs` into your terminal:
 
 ```
-C:\> lichs
+$ lichs
 ```
 
 That will take you to the intro screen:
