@@ -27,20 +27,22 @@ def main():
         key = input("token: ")
         set_token(key)
 
+    token = token_file.read_text()
+    session = berserk.TokenSession(token)
+    client = berserk.clients.Client(session)
+    board = berserk.clients.Board(session)
+
+    # Gets your account data, e.g ["id"], ["username"]
     try:
-        token = token_file.read_text()
-        session = berserk.TokenSession(token)
-        client = berserk.clients.Client(session)
-        board = berserk.clients.Board(session)
-    except:
+        account_data = client.account.get()
+        player_id = account_data["id"]
+
+    except berserk.exceptions.ResponseError as e:
+        print("Error ", e, "occurred.")
         print("Unable to connect Lichess")
         print("Check if your token key is right")
         print("Or try again later")
         os._exit(0)
-
-    # Gets your account data, e.g ["id"], ["username"]
-    account_data = client.account.get()
-    player_id = account_data["id"]
 
     # Welcome text
     print("Welcome to Lichess!\n")
