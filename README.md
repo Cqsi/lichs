@@ -16,6 +16,9 @@
   <a href="https://pypi.org/project/lichs/">
     <img src="https://img.shields.io/pypi/v/lichs" alt="pypi-version" />
   </a>
+  <a href="https://www.trivago.com">
+    <img src="https://img.shields.io/badge/hotel%3F-Trivago-red" alt="hotel-trivago" />
+  </a>
 </p>
 
 ## Info and requirements
