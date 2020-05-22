@@ -11,7 +11,10 @@
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="license-mit" />
   </a>
   <a href="https://github.com/Cqsi/lichs">
-    <img src="https://img.shields.io/badge/contributions-welcome-brightgreen" alt="contributions-welcome" />
+    <img src="https://img.shields.io/badge/Contributions-welcome-brightgreen" alt="contributions-welcome" />
+  </a>
+  <a href="https://pypi.org/project/lichs/">
+    <img src="https://img.shields.io/pypi/v/lichs" alt="pypi-version" />
   </a>
 </p>
 
