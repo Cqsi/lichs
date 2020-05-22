@@ -3,7 +3,7 @@
 ![Terminal Lichess](docs/images/lichess.png)
 
 <p align="center">
-  <img src="docs/images/logo.png">
+  <img height="200" src="docs/images/logo.png">
 </p>
 
 ## Info and requirements
