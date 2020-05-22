@@ -1,9 +1,8 @@
 import sys
-import pathlib
+from pathlib import Path
 
 def set_api(key):
-    
-    file = open(str(pathlib.Path(__file__).parent.absolute()) + "\\key.txt", "w")
-    file.write(key)
-    file.close()
+
+    token_file = Path(__file__).parent.absolute() / "key"
+    token_file.write_text(key)
     print("The API-token " + key + " was entered and saved.")
