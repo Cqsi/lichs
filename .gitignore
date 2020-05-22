@@ -4,8 +4,7 @@ build/
 *.egg-info
 
 # Keys
-lichess_terminal/key.txt
+lichs/key.txt
 
 # Others
 __pycache__
-testing/__pycache__
