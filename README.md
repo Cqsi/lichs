@@ -1,11 +1,10 @@
-# Lichs
+<!--![Terminal Lichess](docs/images/lichess.png)-->
 
-![Terminal Lichess](docs/images/lichess.png)
-
-<p align="center">
-    ahsdölajsdklasjdölkajsdöklajsdökjasdkljasödlkjaksldjöakljsdökj
+<h1 align="center">
   <img height="200" src="docs/images/logo.png">
-</p>
+  <br>
+  Lichs
+</h1>
 
 ## Info and requirements
 * <ins>Uses Lichess</ins>, which means that you need to have a Lichess account
