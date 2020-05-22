@@ -7,17 +7,17 @@
 </h1>
 
 <p align="center">
-  <a href="https://github.com/Cqsi/lichs/blob/master/LICENSE">
-    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="license-mit" />
+  <a href="https://github.com/Cqsi/lichs">
+    <img src="https://img.shields.io/badge/project-active-brightgreen" alt="project-active" />
   </a>
   <a href="https://github.com/Cqsi/lichs">
     <img src="https://img.shields.io/badge/Contributions-welcome-brightgreen" alt="contributions-welcome" />
   </a>
+  <a href="https://github.com/Cqsi/lichs/blob/master/LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="license-mit" />
+  </a>
   <a href="https://pypi.org/project/lichs/">
     <img src="https://img.shields.io/pypi/v/lichs" alt="pypi-version" />
-  </a>
-  <a href="https://github.com/Cqsi/lichs">
-    <img src="https://img.shields.io/badge/project-active-brightgreen" alt="project-active" />
   </a>
 </p>
 
