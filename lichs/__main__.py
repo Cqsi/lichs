@@ -7,22 +7,36 @@ from pathlib import Path
 from lichs.Game import Game
 from lichs.api_key import set_api
 
+token_file = Path(__file__).parent.absolute() / "key"
+
+
+def set_token(key):
+    token_file.write_text(key)
+    print("The API-token " + key + " was entered and saved.")
+
+
 
 def main():
+    if len(sys.argv) == 2:
+            set_token(sys.argv[1])
+
+    if not token_file.exists():
+        print("Please provid a token key")
+        print("See the instructions in the Github README:")
+        print("https://github.com/Cqsi/lichs#how-to-generate-a-personal-api-token")
+        key = input("token: ")
+        set_token(key)
 
     try:
-        set_api(sys.argv[1])
-        os._exit(0)
+        token = token_file.read_text()
+        session = berserk.TokenSession(token)
+        client = berserk.clients.Client(session)
+        board = berserk.clients.Board(session)
     except:
-        try:
-            token_file = Path(__file__).parent.absolute() / "key"
-            token = token_file.read_text()
-            session = berserk.TokenSession(token)
-            client = berserk.clients.Client(session)
-            board = berserk.clients.Board(session)
-        except:
-            print("The API token is either empty or wrong. Please run the command 'lichess' and input your API token as a second argument, i.e 'lichs <api_token>'. If you need more help, please see the instructions in the Github README: \nhttps://github.com/Cqsi/lichs#how-to-generate-a-personal-api-token")
-            os._exit(0)
+        print("Unable to connect Lichess")
+        print("Check if your token key is right")
+        print("Or try again later")
+        os._exit(0)
 
     # Gets your account data, e.g ["id"], ["username"]
     account_data = client.account.get()
@@ -54,7 +68,7 @@ def main():
 
             isWhite = True
             color = "Black" # We set the color to the opposite color of the player
-            
+                
             if player_id != client.games.export(event['game']['id'])['players']['white']['user']['id']:
                 isWhite = False
                 color = "White"
@@ -64,7 +78,3 @@ def main():
                 print("You're playing as white!")
             game = Game(board, event['game']['id'], player_id, isWhite, color)
             game.start()
-
-
-if __name__ == "__main__":
-    main()
