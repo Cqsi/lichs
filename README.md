@@ -2,6 +2,10 @@
 
 ![Terminal Lichess](docs/images/lichess.png)
 
+<p align="center">
+  <img src="docs/images/logo.png">
+</p>
+
 ## Info and requirements
 * <ins>Uses Lichess</ins>, which means that you need to have a Lichess account
 * Operating System: Only Windows for now (see [TODO](https://github.com/Cqsi/lichess_terminal#todo-and-current-questions))
