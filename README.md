@@ -10,6 +10,9 @@
   <a href="https://github.com/Cqsi/lichs/blob/master/LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="license-mit" />
   </a>
+  <a href="https://github.com/Cqsi/lichs">
+    <img src="https://img.shields.io/badge/contributions-welcome-brightgreen" alt="contributions-welcome" />
+  </a>
 </p>
 
 ## Info and requirements
