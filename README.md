@@ -3,7 +3,7 @@
 <h1 align="center">
   <img height="200" src="docs/images/logo.png">
   <br>
-  Lichs
+  Lichs (Lichess in the Terminal)
 </h1>
 
 ## Info and requirements
