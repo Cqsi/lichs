@@ -6,9 +6,14 @@
   Lichs (Lichess in the Terminal)
 </h1>
 
+<p align="center">
+  <a href="https://github.com/Cqsi/lichs/blob/master/LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="license-mit" />
+  </a>
+</p>
+
 ## Info and requirements
 * <ins>Uses Lichess</ins>, which means that you need to have a Lichess account
-* Operating System: Only Windows for now (see [TODO](https://github.com/Cqsi/lichess_terminal#todo-and-current-questions))
 * Only Classical and Rapid games because the Lichess API doesn't allow anything else (quite frankly, Blitz and Bullet like games wouldn't be a lot of fun since you would have to input the coordinates really fast)
 * This program uses UCI-format for inputing moves, see the [important section](https://github.com/Cqsi/lichess_terminal#important)
 
