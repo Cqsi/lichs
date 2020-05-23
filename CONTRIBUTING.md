@@ -4,6 +4,7 @@ If you want to play around with the library, go ahead, it's open-source! I would
 If you want to test the program, without starting a game against a real player, it's a little tricky. You basically need to create a new account on Lichess, and then go into the `lichs/testing` folder. There you will find pretty much the exact same copy of the `main.py` and `Game.py` files. To specify the API-key in the `main.py` file, you can just use absolute paths to the file containing the API-key, but it really doesn't matter. Then you can run `main.py`, which waits until it gets challenged and then accepts the challenge. This way you can send a challenge from your "real" account and then the program accepts it, which means that you can play against yourself, one from the terminal and the other from the webpage.
 
 ### TODO and Current Questions
+Down below are a few TODO's, but you should also check out the [issue page](https://github.com/Cqsi/lichs/issues).
 * Add ability to offer a draw
 * Add ability for user to see how much time he/she has left
 * Add support for ranked games
