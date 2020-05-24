@@ -30,8 +30,6 @@ class Game(threading.Thread):
 
     def handle_state_change(self, game_state):
 
-        # big spaghetti code alert, if anyone comes up with a better way to this method please submit your code
-
         global chess_board
 
         if game_state[self.color[0].lower() + "draw"] == True:
