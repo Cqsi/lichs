@@ -10,7 +10,6 @@ Down below are a few TODO's, but you should also check out the [issue page](http
 * Add support for ranked games
 * The chessboard that is displayed isn't very nice looking (it's just letters and dots!), but I'm unsure whether CMD allows much better graphics. The goal would be to create something like [this](https://www.reddit.com/r/chess/comments/cm394n/play_chess_against_stockfish_in_your_terminal/) on other systems like Linux for example.
 * Make it so that the user can see the chat, maybe in an another terminal window. My plan was to create a second command (e.g. "lichess chat) so that you can open a second terminal window and type the command and then get the chat displayed.
-* How do you change the POV (Point Of View) of the chessboard in python-chess? Is it even possible? The current program displays everything from the white's side so if you're black it might be a little weird.
 
 ### Useful links 
 * https://berserk.readthedocs.io/en/master/installation.html - Python client for the Lichess API
