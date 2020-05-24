@@ -29,7 +29,7 @@ class Game(threading.Thread):
                 self.handle_chat_line(event)
 
     def handle_state_change(self, game_state):
-        
+
         # big spaghetti code alert, if anyone comes up with a better way to this method please submit your code
 
         global chess_board
@@ -41,13 +41,13 @@ class Game(threading.Thread):
             os._exit(0)
 
         else:
-            if (len(game_state["moves"].split())-1)%2==self.isWhite: 
+            if (len(game_state["moves"].split())-1)%2==self.isWhite:
 
                 print(self.color + " moved.")
                 print()
-                
+
                 chess_board.push_uci(game_state["moves"].split()[-1])
-                print(chess_board)
+                self.display_board()
                 print()
 
                 self.check_mate(chess_board)
@@ -67,8 +67,8 @@ class Game(threading.Thread):
                         print("You can't make that move. Try again!")
                         continue
                     break
-                
-                print(chess_board)
+
+                self.display_board()
                 self.check_mate(chess_board)
                 print()
                 print(self.color + "'s turn...")
@@ -77,12 +77,12 @@ class Game(threading.Thread):
     def handle_draw_state(self, game_state):
         # TODO Write this method
         pass
-    
+
     def white_first_move(self):
 
         global chess_board
 
-        print(chess_board)
+        self.display_board()
         while(True):
             try:
                 move = input("Make your move: ")
@@ -96,8 +96,8 @@ class Game(threading.Thread):
                 print("You can't make that move. Try again!")
                 continue
             break
-                
-        print(chess_board)
+
+        self.display_board()
         print()
         print(self.color + "'s turn...")
 
@@ -118,3 +118,11 @@ class Game(threading.Thread):
 
             print("Thanks for playing!")
             os._exit(0)
+
+    def display_board(self):
+        global chess_board
+
+        if self.isWhite:
+            print(chess_board)
+        else:
+            print(chess_board.transform(chess.flip_vertical).transform(chess.flip_horizontal))
