@@ -2,7 +2,7 @@ import sys
 import os
 import berserk
 import chess
-import pathlib
+from pathlib import Path
 
 #from .Game import Game
 #from .api_key import set_api
@@ -17,8 +17,8 @@ def main():
         os._exit(0)
     except:
         try:
-            with open(str(pathlib.Path(__file__).parent.absolute()) + "\\key.txt") as f:
-                token = f.read()
+            token_file = Path(__file__).parent.absolute() / "key"
+            token = token_file.read_text()
             session = berserk.TokenSession(token)
             client = berserk.clients.Client(session)
             board = berserk.clients.Board(session)
