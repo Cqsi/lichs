@@ -4,8 +4,8 @@ import berserk
 import chess
 from pathlib import Path
 
-from Game import Game
-from api_key import set_api
+from lichs.Game import Game
+from lichs.api_key import set_api
 
 
 def main():
