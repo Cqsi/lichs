@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://github.com/Cqsi/lichs">
-    <img src="https://img.shields.io/badge/project-active-brightgreen" alt="project-active" />
+    <img src="https://img.shields.io/badge/project-semi--active-orange" alt="project-active" />
   </a>
   <a href="https://github.com/Cqsi/lichs">
     <img src="https://img.shields.io/badge/Contributions-welcome-brightgreen" alt="contributions-welcome" />
