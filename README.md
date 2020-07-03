@@ -24,7 +24,6 @@
 ## Info and requirements
 * <ins>Uses Lichess</ins>, which means that you need to have a Lichess account
 * Only Classical and Rapid games because the Lichess API doesn't allow anything else (quite frankly, Blitz and Bullet like games wouldn't be a lot of fun since you would have to input the coordinates really fast)
-* This program uses UCI-format for inputing moves, see the [important section](https://github.com/Cqsi/lichess_terminal#important)
 
 Lichs uses the Lichess API (more exactly [berserk](https://github.com/rhgrant10/berserk)) to make it possible for you to play against other real players directly in the terminal on Lichess servers. <ins>This project is still in its early stages; there's no chat support, pretty bad graphics, no ranked games and probably some bugs.</ins>
 
@@ -97,7 +96,7 @@ When the program asks for your move, you need to input the move in UCI-format. I
 
 An example of UCI-format would be `e2e4`. That would move the piece on `e2` to `e4` (as a start-move it's the pawn). Just to get this clear; `Nf3` <ins>wouldn't work</ins>.
 
-The program will inform you if you can't make the move you have input. 
+The program will inform you if you can't make the move you have input.
 
 
 ## How to contribute?
