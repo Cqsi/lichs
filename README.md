@@ -24,7 +24,7 @@
 ## Info and requirements
 * <ins>Uses Lichess</ins>, which means that you need to have a Lichess account
 * Only Classical and Rapid games because the Lichess API doesn't allow anything else (quite frankly, Blitz and Bullet like games wouldn't be a lot of fun since you would have to input the coordinates really fast)
-* This program uses [SAN](https://en.wikipedia.org/wiki/Algebraic_notation_(chess))-notation, see the (Important)[#Important]-section.
+* This program uses [SAN](https://en.wikipedia.org/wiki/Algebraic_notation_(chess))-notation, see the [Important](#Important)-section.
 
 Lichs uses the Lichess API (more exactly [berserk](https://github.com/rhgrant10/berserk)) to make it possible for you to play against other real players directly in the terminal on Lichess servers. <ins>This project is still in its early stages; there's no chat support, pretty bad graphics, no ranked games and probably some bugs.</ins>
 
