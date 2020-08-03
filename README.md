@@ -92,12 +92,11 @@ Above is an example of the board displayed. <ins>Note:</ins> at the moment the b
 
 
 ### Important
-When the program asks for your move, you need to input the move in UCI-format. In UCI-format you specify from <ins>where to where</ins> the move will take place. You don't need to specify what type of piece your moving, the program will know what piece is in the given position.
-
-An example of UCI-format would be `e2e4`. That would move the piece on `e2` to `e4` (as a start-move it's the pawn). Just to get this clear; `Nf3` <ins>wouldn't work</ins>.
+When the program asks for your move, you need to input the move in [standard algebraic notation](https://en.wikipedia.org/wiki/Algebraic_notation_(chess)) (SAN). Basically, it specifies <ins>which piece</ins> to move and <ins>to where</ins>. As an example, to move a knight from g1 to f3, you type in **Nf3** (N is for Knight, since Rook uses K). If you want to learn more, click on the link above.
 
 The program will inform you if you can't make the move you have input.
 
+Support for UCI-notation might get added later.
 
 ## How to contribute?
 See the [CONTRIBUTING.md](CONTRIBUTING.md) file.
