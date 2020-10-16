@@ -4,8 +4,8 @@ import berserk
 import chess
 from pathlib import Path
 
-from lichs.Game import Game
-from lichs.api_key import set_api
+import Game
+import api_key
 
 token_file = Path(__file__).parent.absolute() / "key"
 
@@ -46,15 +46,16 @@ def main():
     print("1. Rapid (10+0)\n2. Classical (30+0)\n")
     num = input("Enter 1 or 2: ")
     time = 0
-
-    if num=="1":
-        time=10
-    elif num=="2":
-        time=30
-    else:
-        # This needs improvement, something like a while/for loop
-        print("Something went wrong, please enter the lichess command again.")
-        sys.exit()
+    flag = True
+    while flag == True:
+        if num=="1":
+            time=10
+            flag = False
+        elif num=="2":
+            time=30
+            flag = False
+        else:
+            num = input("Please choose from either 1 (Rapid, 10+0) or 2 (Classical, 30+0): ")
 
     print("Searching after opponent...")
     board.seek(time, 0)
