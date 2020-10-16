@@ -4,8 +4,8 @@ import berserk
 import chess
 from pathlib import Path
 
-import Game
-import api_key
+from lichs.Game import Game
+from lichs.api_key import set_api
 
 token_file = Path(__file__).parent.absolute() / "key"
 
@@ -18,7 +18,7 @@ def main():
             set_token(sys.argv[1])
 
     if not token_file.exists():
-        print("Please provid a token key")
+        print("Please provide1 a token key")
         print("See the instructions in the Github README:")
         print("https://github.com/Cqsi/lichs#how-to-generate-a-personal-api-token")
         key = input("token: ")
@@ -30,15 +30,19 @@ def main():
     board = berserk.clients.Board(session)
 
     # Gets your account data, e.g ["id"], ["username"]
-    try:
-        account_data = client.account.get()
-        player_id = account_data["id"]
-    except berserk.exceptions.ResponseError as e:
-        print("Error ", e, "occurred.")
-        print("Unable to connect Lichess")
-        print("Check if your token key is right")
-        print("Or try again later")
-        os._exit(0)
+    errOccurring = True
+    while errOccurring:
+        try:
+            account_data = client.account.get()
+            player_id = account_data["id"]
+            errOccurring = False
+        except berserk.exceptions.ResponseError as e:
+            print("Error ", e, "occurred.")
+            print("Unable to connect to Lichess")
+            print("Check if your token key is right")
+            print("Or try again later")
+            key = input("token: ")
+            set_token(key)
 
     # Welcome text
     print("Welcome to Lichess!\n")
@@ -62,7 +66,6 @@ def main():
 
     for event in board.stream_incoming_events():
         if event['type'] == 'gameStart':
-
             print("An opponent was found!")
 
             isWhite = True
