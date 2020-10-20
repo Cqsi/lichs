@@ -18,7 +18,7 @@ def main():
             set_token(sys.argv[1])
 
     if not token_file.exists():
-        print("Please provide1 a token key")
+        print("Please provide a token key")
         print("See the instructions in the Github README:")
         print("https://github.com/Cqsi/lichs#how-to-generate-a-personal-api-token")
         key = input("token: ")
