@@ -3,6 +3,7 @@ import os
 import berserk
 import chess
 from pathlib import Path
+from getpass import getpass
 
 from lichs.Game import Game
 from lichs.api_key import set_api
@@ -11,18 +12,20 @@ token_file = Path(__file__).parent.absolute() / "key"
 
 def set_token(key):
     token_file.write_text(key)
-    print("The API-token " + key + " was entered and saved.")
+    print("The API-token was entered and saved.")
+
+def get_token():
+    return getpass("Please enter your token:")
 
 def main():
     if len(sys.argv) == 2:
             set_token(sys.argv[1])
 
     if not token_file.exists():
-        print("Please provide a token key")
+        print("Please provide1 a token key")
         print("See the instructions in the Github README:")
         print("https://github.com/Cqsi/lichs#how-to-generate-a-personal-api-token")
-        key = input("token: ")
-        set_token(key)
+        set_token(get_token())
 
     token = token_file.read_text()
     session = berserk.TokenSession(token)
@@ -41,8 +44,7 @@ def main():
             print("Unable to connect to Lichess")
             print("Check if your token key is right")
             print("Or try again later")
-            key = input("token: ")
-            set_token(key)
+            set_token(get_token())
 
     # Welcome text
     print("Welcome to Lichess!\n")
