@@ -8,21 +8,21 @@ from getpass import getpass
 from lichs.Game import Game
 from lichs.api_key import set_api
 
-token_file = Path(__file__).parent.absolute() / "key"
+token_file = Path(__file__).parent.absolute() / "token.key"
 
 def set_token(key):
     token_file.write_text(key)
     print("The API-token was entered and saved.")
 
 def get_token():
-    return getpass("Please enter your token:")
+    print(getpass("Please enter your token: "))
 
 def main():
     if len(sys.argv) == 2:
             set_token(sys.argv[1])
 
     if not token_file.exists():
-        print("Please provide1 a token key")
+        print("Please provide a token key")
         print("See the instructions in the Github README:")
         print("https://github.com/Cqsi/lichs#how-to-generate-a-personal-api-token")
         set_token(get_token())
@@ -47,7 +47,7 @@ def main():
             set_token(get_token())
 
     # Welcome text
-    print("Welcome to Lichess!\n")
+    print("Welcome to Lichess in the Terminal (lichs)\n")
     print("What kind of chess do you want to play?")
     print("1. Rapid (10+0)\n2. Classical (30+0)\n")
     num = input("Enter 1 or 2: ")
