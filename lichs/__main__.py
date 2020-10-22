@@ -15,7 +15,10 @@ def set_token(key):
     print("The API-token was entered and saved.")
 
 def get_token():
-    print(getpass("Please enter your token: "))
+    return getpass("Please enter your token: ")
+# def get_opt(opt):
+    # TODO Get option function
+    
 
 def main():
     if len(sys.argv) == 2:
@@ -48,18 +51,29 @@ def main():
 
     # Welcome text
     print("Welcome to Lichess in the Terminal (lichs)\n")
-    print("What kind of chess do you want to play?")
+    print("Type either\nP to play\nH for help\nQ to quit ")
+    input = input("Choose your option: ")
+    optFlag = True # Flag for options menu
+    while optFlag == True:
+        if input == "H":
+            print("Welcome to Lichess in the Terminal (lichs)\n") 
+            print("Thanks for playing. ")
+            # TODO add help menu
+        elif input == "Q":
+            exit(0)
+        else:
+            num = input("Please choose from either 1 (Rapid, 10+0) or 2 (Classical, 30+0): ")
     print("1. Rapid (10+0)\n2. Classical (30+0)\n")
     num = input("Enter 1 or 2: ")
     time = 0
-    flag = True
-    while flag == True:
+    typeFlag = True # Flag for gametype validation
+    while typeFlag == True:
         if num=="1":
             time=10
-            flag = False
+            typeFlag = False
         elif num=="2":
             time=30
-            flag = False
+            typeFlag = False
         else:
             num = input("Please choose from either 1 (Rapid, 10+0) or 2 (Classical, 30+0): ")
 
