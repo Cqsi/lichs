@@ -60,7 +60,7 @@ def main():
             print("Thanks for playing. ")
             # TODO add help menu
         elif input == "Q":
-            exit(0)
+            sys.exit(0)
         else:
             num = input("Please choose from either 1 (Rapid, 10+0) or 2 (Classical, 30+0): ")
     print("1. Rapid (10+0)\n2. Classical (30+0)\n")
