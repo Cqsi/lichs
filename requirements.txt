@@ -1,11 +1,2 @@
 berserk==0.10.0
-certifi==2020.6.20
-chardet==3.0.4
-Deprecated==1.2.10
-idna==2.10
-lichs==1.2.0
-ndjson==0.3.1
-python-chess==1.1.0
-requests==2.24.0
-urllib3==1.25.10
-wrapt==1.12.1
+python-chess==0.25.1
