@@ -52,20 +52,18 @@ def main():
     # Welcome text
     print("Welcome to Lichess in the Terminal (lichs)\n")
     print("Type either\nP to play\nH for help\nQ to quit ")
-    input = input("Choose your option: ")
+    choice = input("Choose your option: ")
     optFlag = True # Flag for options menu
+    num = " "
     while optFlag == True:
-        if input == "H":
+        if choice.lower() == "h":
             print("Welcome to Lichess in the Terminal (lichs)\n") 
             print("Thanks for playing. ")
             # TODO add help menu
-        elif input == "Q":
-            sys.exit(0)
-        else:
-            num = input("Please choose from either 1 (Rapid, 10+0) or 2 (Classical, 30+0): ")
-    print("1. Rapid (10+0)\n2. Classical (30+0)\n")
-    num = input("Enter 1 or 2: ")
-    time = 0
+        elif choice.lower() == "q": sys.exit(0)
+        elif choice.lower() == "p": optFlag = False
+        else: print("Please choose from either P to play, H for help, or Q to quit")
+    print("What kind of chess would you like to play? \n 1. Rapid (10+0)\n2. Classical (30+0)\n")
     typeFlag = True # Flag for gametype validation
     while typeFlag == True:
         if num=="1":
