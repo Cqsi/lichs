@@ -5,7 +5,7 @@ Deprecated==1.2.10
 idna==2.10
 lichs==1.2.0
 ndjson==0.3.1
-python-chess==1.1.0
+python-chess==1.999
 requests==2.24.0
 urllib3==1.25.11
 wrapt==1.12.1
