@@ -3,26 +3,32 @@ import os
 import berserk
 import chess
 from pathlib import Path
+from getpass import getpass
 
 from lichs.Game import Game
 from lichs.api_key import set_api
 
-token_file = Path(__file__).parent.absolute() / "key"
+token_file = Path(__file__).parent.absolute() / "token.key"
 
 def set_token(key):
     token_file.write_text(key)
-    print("The API-token " + key + " was entered and saved.")
+    print("The API-token was entered and saved.")
+
+def get_token():
+    return getpass("Please enter your token: ")
+# def get_opt(opt):
+    # TODO Get option function
+    
 
 def main():
     if len(sys.argv) == 2:
             set_token(sys.argv[1])
 
     if not token_file.exists():
-        print("Please provid a token key")
+        print("Please provide a token key")
         print("See the instructions in the Github README:")
         print("https://github.com/Cqsi/lichs#how-to-generate-a-personal-api-token")
-        key = input("token: ")
-        set_token(key)
+        set_token(get_token())
 
     token = token_file.read_text()
     session = berserk.TokenSession(token)
@@ -30,38 +36,50 @@ def main():
     board = berserk.clients.Board(session)
 
     # Gets your account data, e.g ["id"], ["username"]
-    try:
-        account_data = client.account.get()
-        player_id = account_data["id"]
-    except berserk.exceptions.ResponseError as e:
-        print("Error ", e, "occurred.")
-        print("Unable to connect Lichess")
-        print("Check if your token key is right")
-        print("Or try again later")
-        os._exit(0)
+    errOccurring = True
+    while errOccurring:
+        try:
+            account_data = client.account.get()
+            player_id = account_data["id"]
+            errOccurring = False
+        except berserk.exceptions.ResponseError as e:
+            print("Error ", e, "occurred.")
+            print("Unable to connect to Lichess")
+            print("Check if your token key is right")
+            print("Or try again later")
+            set_token(get_token())
 
     # Welcome text
-    print("Welcome to Lichess!\n")
-    print("What kind of chess do you want to play?")
-    print("1. Rapid (10+0)\n2. Classical (30+0)\n")
-    num = input("Enter 1 or 2: ")
-    time = 0
-
-    if num=="1":
-        time=10
-    elif num=="2":
-        time=30
-    else:
-        # This needs improvement, something like a while/for loop
-        print("Something went wrong, please enter the lichess command again.")
-        sys.exit()
+    print("Welcome to Lichess in the Terminal (lichs)\n")
+    print("Type either\nP to play\nH for help\nQ to quit ")
+    choice = input("Choose your option: ")
+    optFlag = True # Flag for options menu
+    num = " "
+    while optFlag == True:
+        if choice.lower() == "h":
+            print("Welcome to Lichess in the Terminal (lichs)\n") 
+            print("Thanks for playing. ")
+            # TODO add help menu
+        elif choice.lower() == "q": sys.exit(0)
+        elif choice.lower() == "p": optFlag = False
+        else: print("Please choose from either P to play, H for help, or Q to quit")
+    print("What kind of chess would you like to play? \n 1. Rapid (10+0)\n2. Classical (30+0)\n")
+    typeFlag = True # Flag for gametype validation
+    while typeFlag == True:
+        if num=="1":
+            time=10
+            typeFlag = False
+        elif num=="2":
+            time=30
+            typeFlag = False
+        else:
+            num = input("Please choose from either 1 (Rapid, 10+0) or 2 (Classical, 30+0): ")
 
     print("Searching after opponent...")
     board.seek(time, 0)
 
     for event in board.stream_incoming_events():
         if event['type'] == 'gameStart':
-
             print("An opponent was found!")
 
             isWhite = True

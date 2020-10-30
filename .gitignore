@@ -4,7 +4,10 @@ build/
 *.egg-info
 
 # Keys
+lichs/key
 lichs/key.txt
+lichs/token.key
 
 # Others
 __pycache__
+
