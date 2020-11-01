@@ -21,6 +21,7 @@ def get_token():
     
 
 def main():
+    
     if len(sys.argv) == 2:
             set_token(sys.argv[1])
 
@@ -29,6 +30,7 @@ def main():
         print("See the instructions in the Github README:")
         print("https://github.com/Cqsi/lichs#how-to-generate-a-personal-api-token")
         set_token(get_token())
+
 
     token = token_file.read_text()
     session = berserk.TokenSession(token)
@@ -52,18 +54,21 @@ def main():
     # Welcome text
     print("Welcome to Lichess in the Terminal (lichs)\n")
     print("Type either\nP to play\nH for help\nQ to quit ")
-    choice = input("Choose your option: ")
     optFlag = True # Flag for options menu
-    num = " "
     while optFlag == True:
+        choice = input("Choose your option: ")
         if choice.lower() == "h":
-            print("Welcome to Lichess in the Terminal (lichs)\n") 
-            print("Thanks for playing. ")
-            # TODO add help menu
-        elif choice.lower() == "q": sys.exit(0)
-        elif choice.lower() == "p": optFlag = False
+            print("You will find help on the website that's opening")
+            os.system("start https://github.com/Cqsi/lichs/blob/master/README.md#usage")
+        elif choice.lower() == "q":
+            print("Quitting...")
+            sys.exit(0)
+        elif choice.lower() == "p": 
+            optFlag = False
         else: print("Please choose from either P to play, H for help, or Q to quit")
-    print("What kind of chess would you like to play? \n 1. Rapid (10+0)\n2. Classical (30+0)\n")
+        
+    print("What kind of chess would you like to play? \n1. Rapid (10+0)\n2. Classical (30+0)\n")
+    num = input("Please choose from either 1 (Rapid, 10+0) or 2 (Classical, 30+0): ")
     typeFlag = True # Flag for gametype validation
     while typeFlag == True:
         if num=="1":

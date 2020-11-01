@@ -100,7 +100,6 @@ The program will inform you if you can't make the move you have input.
 Support for UCI-notation might get added later.
 
 ## Contributions
-
 <a href="https://github.com/Cqsi/lichs/graphs/contributors">
   <img src="https://contributors-img.web.app/image?repo=Cqsi/lichs" />
 </a>
