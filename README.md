@@ -50,6 +50,10 @@ and the program will be installed. The next step is to generate a personal API-k
 
 ## Usage
 
+<h1 align="center">
+  <img src="docs/images/carbon.png">
+</h1>
+
 You start playing by typing the command `lichs` into your terminal:
 
 ```
