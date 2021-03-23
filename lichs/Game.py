@@ -13,7 +13,6 @@ class Game(threading.Thread):
         self.game_id = game_id
         self.board = board
         self.stream = board.stream_game_state(game_id)
-        self.current_state = next(self.stream)
         self.player_id = player_id
         self.isWhite = isWhite
         self.color = color
