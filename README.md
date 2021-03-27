@@ -22,7 +22,7 @@
 </p>
 
 ## Info and requirements
-* <ins>Uses Lichess</ins>, which means that you need to have a Lichess account
+* Uses [Lichess](https://lichess.org/), which means that you need to have a Lichess account
 * Only Classical and Rapid games because the Lichess API doesn't allow anything else
 * This program uses [SAN](https://en.wikipedia.org/wiki/Algebraic_notation_(chess))-notation, see the [Important](#Important)-section.
 
