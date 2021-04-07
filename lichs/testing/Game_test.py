@@ -13,7 +13,6 @@ class Game(threading.Thread):
         self.game_id = game_id
         self.board = board
         self.stream = board.stream_game_state(game_id)
-        self.current_state = next(self.stream)
         self.player_id = player_id
         self.isWhite = isWhite
         self.color = color
@@ -23,7 +22,9 @@ class Game(threading.Thread):
 
     def run(self):
         for event in self.stream:
-            if event['type'] == 'gameState':
+            if event['type'] == "gameFull":
+                self.handle_game_full(event)
+            elif event['type'] == 'gameState':
                 self.handle_state_change(event)
             elif event['type'] == 'chatLine':
                 self.handle_chat_line(event)
@@ -39,7 +40,9 @@ class Game(threading.Thread):
             os._exit(0)
 
         else:
-            if (len(game_state["moves"].split())-1)%2==self.isWhite:
+            # there's no "amount of turns" variable in the JSON, so we have to construct one manually
+            turn = len(game_state["moves"].split())-1
+            if turn%2 == self.isWhite:
 
                 print(self.color + " moved.")
                 print()
@@ -71,6 +74,9 @@ class Game(threading.Thread):
                 print()
                 print(self.color + "'s turn...")
 
+    def handle_game_full(self, gamefull):
+        # TODO Write this method
+        pass
 
     def handle_draw_state(self, game_state):
         # TODO Write this method
@@ -124,6 +130,7 @@ class Game(threading.Thread):
     def display_board(self):
         global chess_board
 
+        # display the chess board, if the the player's color is black then flip the board 
         if self.isWhite:
             print(chess_board)
         else:
