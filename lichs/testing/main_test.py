@@ -5,8 +5,11 @@ import os
 
 import Game_test
 
+path = "token.txt" # Path to the api-token file
+
 try:
-    token = "" # put your API-token here
+    with open(path) as f:
+        token = f.read()
     session = berserk.TokenSession(token)
     client = berserk.clients.Client(session)
     board = berserk.clients.Board(session)
