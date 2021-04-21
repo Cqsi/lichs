@@ -95,7 +95,7 @@ Above is an example of the board displayed. <ins>Note:</ins> at the moment the b
 
 
 ### Important
-When the program asks for your move, you need to input the move in [standard algebraic notation](https://en.wikipedia.org/wiki/Algebraic_notation_(chess)) (SAN). Basically, it specifies <ins>which piece</ins> to move and <ins>to where</ins>. As an example, to move a knight from g1 to f3, you type in **Nf3** (N is for Knight, since Rook uses K). If you want to learn more, click on the link above.
+When the program asks for your move, you need to input the move in [standard algebraic notation](https://en.wikipedia.org/wiki/Algebraic_notation_(chess)) (SAN). Basically, it specifies <ins>which piece</ins> to move and <ins>to where</ins>. As an example, to move a knight from g1 to f3, you type in **Nf3** (N is for Knight, since King uses K). If you want to learn more, click on the link above.
 
 The program will inform you if you can't make the move you have input.
 
