@@ -36,7 +36,7 @@ class Game(threading.Thread):
         if game_state[self.color[0].lower() + "draw"] == True:
             self.handle_draw_state(game_state)
         elif game_state["status"] == "resign":
-            print("The oppononent resigned. Congrats!")
+            print("The opponent resigned. Congrats!")
             os._exit(0)
 
         else:

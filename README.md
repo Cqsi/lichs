@@ -91,7 +91,7 @@ p p p p p p p p
 P P P P . P P P
 R N B Q K B N R
 ```
-Above is an example of the board displayed. <ins>Note:</ins> at the moment the board is always displayed from the white's side, because I don't know how to fix this.
+Above is an example of the board displayed.
 
 
 ### Important
