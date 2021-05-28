@@ -5,7 +5,7 @@ import chess
 from pathlib import Path
 from getpass import getpass
 
-from lichs.Game import Game
+from Game import Game
 from lichs.api_key import set_api
 
 token_file = Path(__file__).parent.absolute() / "token.key"
@@ -97,9 +97,8 @@ def main():
                 print("White's turn...")
             else:
                 print("You're playing as white!")
-            game = Game(board, event['game']['id'], player_id, isWhite, color)
+            game = Game(board, event['game']['id'], player_id, isWhite, color, time)
             game.start()
-
 
 if __name__ == "__main__":
     main()
