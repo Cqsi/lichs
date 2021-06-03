@@ -26,7 +26,7 @@
 * Only Classical and Rapid games because the Lichess API doesn't allow anything else
 * This program uses [SAN](https://en.wikipedia.org/wiki/Algebraic_notation_(chess))-notation, see the [Important](#Important)-section.
 
-Lichs uses the Lichess API (more exactly [berserk](https://github.com/rhgrant10/berserk)) to make it possible for you to play against other real players directly in the terminal on Lichess servers. If like this project, be sure to also check out [Nick Zuber's Chs-project](https://github.com/nickzuber/chs), since it was his project that inspired me to do this in the first place.
+Lichs uses the Lichess API (more exactly [berserk](https://github.com/rhgrant10/berserk)) to make it possible for you to play against other real players directly in the terminal on Lichess servers. If you like this project, be sure to also check out [Nick Zuber's Chs-project](https://github.com/nickzuber/chs), since it was his project that inspired me to do this in the first place.
 
 
 ## Installation
@@ -70,7 +70,7 @@ What kind of chess do you want to play?
 Enter 1 or 2:
 ```
 
-That should be pretty self-explanatory, you basically choose between Rapid and Classical (the Lichess API doens't support anything else) by entering either 1 or 2. The timing of the games is also listed there; Rapid is 10min and Classical 30min (without extra-time, I might add support for extra-time later)
+That should be pretty self-explanatory, you basically choose between Rapid and Classical (the Lichess API doesn't support anything else) by entering either 1 or 2. The timing of the games is also listed there; Rapid is 10min and Classical 30min (without extra-time, I might add support for extra-time later)
 
 When you have input either 1 or 2, the program will start to search after an opponent. It shouldn't take long and the game should start pretty quickly.
 
@@ -91,7 +91,7 @@ p p p p p p p p
 P P P P . P P P
 R N B Q K B N R
 ```
-Above is an example of the board displayed. <ins>Note:</ins> at the moment the board is always displayed from the white's side, because I don't know how to fix this.
+Above is an example of the board displayed.
 
 
 ### Important
