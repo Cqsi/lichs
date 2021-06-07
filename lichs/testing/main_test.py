@@ -42,5 +42,5 @@ for event in board.stream_incoming_events():
         else:
             print("You're playing as white!")
             
-        game = Game_test.Game(board, event['game']['id'], player_id, isWhite, color)
+        game = Game_test.Game(board, event['game']['id'], player_id, isWhite, color, 10)
         game.start()
