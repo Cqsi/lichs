@@ -21,6 +21,9 @@
   </a>
 </p>
 
+## NOTE!
+This project has not been updated in over a year. Feel free to check out the code, however there could be multiple errors upon running it. 
+
 ## Info and requirements
 * Uses [Lichess](https://lichess.org/), which means that you need to have a Lichess account
 * Only Classical and Rapid games because the Lichess API doesn't allow anything else
