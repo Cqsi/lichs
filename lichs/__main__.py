@@ -42,8 +42,14 @@ def get_game_type_input() -> Tuple[int, int]:
 
 def main():
     
-    if len(sys.argv) == 2:
-            set_token(sys.argv[1])
+    enhanced_display = False
+
+    if len(sys.argv) > 1:
+        for item in sys.argv:
+            if item == '--enhanced-display':
+                enhanced_display = True
+            if item.startswith('lip'):
+                set_token(item)
 
     if not token_file.exists():
         print("Please provide a token key")
@@ -106,7 +112,7 @@ def main():
                 print("White's turn...")
             else:
                 print("You're playing as white!")
-            game = Game(board, event['game']['id'], player_id, isWhite, color, time)
+            game = Game(board, event['game']['id'], player_id, isWhite, color, time, enhanced_display)
             game.start()
 
 if __name__ == "__main__":

@@ -69,8 +69,9 @@ Welcome to Lichess!
 What kind of chess do you want to play?
 1. Rapid (10+0)
 2. Classical (30+0)
+3. Custom
 
-Enter 1 or 2:
+Enter 1, 2 or 3:
 ```
 
 That should be pretty self-explanatory, you basically choose between Rapid and Classical (the Lichess API doesn't support anything else) by entering either 1 or 2. The timing of the games is also listed there; Rapid is 10min and Classical 30min (without extra-time, I might add support for extra-time later)
@@ -94,7 +95,7 @@ p p p p p p p p
 P P P P . P P P
 R N B Q K B N R
 ```
-Above is an example of the board displayed.
+Above is an example of the board displayed. You can pass --enhanced-display flag when launching the game to display a nicer looking board with emoji peices, but be aware that not all fonts support this display.
 
 
 ### Important

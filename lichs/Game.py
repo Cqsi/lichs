@@ -9,7 +9,22 @@ runOnce = True
 
 class Game(threading.Thread):
 
-    def __init__(self, board, game_id, player_id, isWhite, color, time, **kwargs):
+    display_map = {
+        'P': ['♟', '♙'],
+        'R': ['♜', '♖'],
+        'N': ['♞', '♘'],
+        'B': ['♝', '♗'],
+        'Q': ['♛', '♕'],
+        'K': ['♚', '♔'],
+        'p': ['♙', '♟'],
+        'r': ['♖', '♜'],
+        'n': ['♘', '♞'],
+        'b': ['♗', '♝'],
+        'q': ['♕', '♛'],
+        'k': ['♔', '♚']
+    }
+
+    def __init__(self, board, game_id, player_id, isWhite, color, time, enhanced_display, **kwargs):
         super().__init__(**kwargs)
         self.game_id = game_id
         self.board = board
@@ -19,6 +34,7 @@ class Game(threading.Thread):
         self.color = color
         self.clock = {'white': datetime.datetime(1970, 1, 1, 0, time, 0), 'black': datetime.datetime(1970, 1, 1, 0, time, 0)}
         self.first_move = 2 # returns false after 2 moves have been made
+        self.enhanced_display = enhanced_display
         if self.isWhite:
             self.white_first_move()
 
@@ -149,17 +165,67 @@ class Game(threading.Thread):
             print("Thanks for playing!")
             os._exit(0)
 
+    def enhance_board_display(self, board_str: str) -> str:
+        """Takes the standard board display from chess and modifies it to use symbols and add annotations
+
+        :param board_str: a string board display coming out of chess.Board
+        :return: Enhanced board display using emojis and adding rank and file labels
+        """
+        white_back = "\u001b[47m"
+        black_back = "\u001b[40m"
+        white_txt = "\u001b[37m"
+        black_txt = "\u001b[30m"
+        # make into list of row strings
+        board_rows = board_str.split('\n')
+        # make into matrix of chars
+        board_rows = [row.split(' ') for row in board_rows]
+
+        # replace matrix elements with checkered squares and icons
+        new_board = []
+        black = True
+        for row in board_rows:
+            new_row = []
+            for item in row:
+                if black:
+                    new_row.append(f'{black_back}{white_txt}{self.display_map.get(item, [" "])[0]}')
+                    black = False
+                else:
+                    new_row.append(f'{white_back}{black_txt}{self.display_map.get(item, ["", " "])[1]}')
+                    black = True
+            new_board.append(new_row)
+            black = not black
+
+        board_rows = new_board
+
+        # Add numbers and letters to side and bottom of board
+        if self.isWhite:
+            board_rows = [row + [f'{black_back}{white_txt} {abs(i)}'] 
+                          for i, row in enumerate(board_rows, start=-len(board_rows))]
+            board_rows.append(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'])
+        else:
+            board_rows = [row + [f'{black_back}{white_txt} {i}'] for i, row in enumerate(board_rows, start=1)]
+            board_rows.append(['h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'])
+
+        board_rows = [' '.join(row) for row in board_rows]
+        return '\n'.join(board_rows)
+
+
     def display_board(self):
         global chess_board
 
         # display the chess board, if the the player's color is black then flip the board 
         if self.isWhite:
-            print(chess_board)
+            board_str = str(chess_board)
         else:
-            print(chess_board.transform(chess.flip_vertical).transform(chess.flip_horizontal))
+            board_str = str(chess_board.transform(chess.flip_vertical).transform(chess.flip_horizontal))
+
+        if self.enhanced_display:
+            print(self.enhance_board_display(board_str))
+        else:
+            print(board_str)
 
         # print clock
-        print("[%02d:%02d : %02d:%02d]" % (self.clock['white'].minute, self.clock['white'].second, 
+        print("[%02d:%02d : %02d:%02d]" % (self.clock['white'].minute, self.clock['white'].second,
                                            self.clock['black'].minute, self.clock['black'].second))
         print()
 
