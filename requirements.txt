@@ -9,3 +9,4 @@ python-chess==1.999
 requests==2.26.0
 urllib3==1.26.5
 wrapt==1.13.3
+pytest==7.2.*

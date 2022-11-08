@@ -2,10 +2,11 @@ import sys
 import os
 import berserk
 import chess
+from typing import Tuple
 from pathlib import Path
 from getpass import getpass
 
-from Game import Game
+from lichs.Game import Game
 from lichs.api_key import set_api
 
 token_file = Path(__file__).parent.absolute() / "token.key"
@@ -18,7 +19,26 @@ def get_token():
     return getpass("Please enter your token: ")
 # def get_opt(opt):
     # TODO Get option function
-    
+
+
+def get_game_type_input() -> Tuple[int, int]:
+    """Gets the game time and give back time from the user."""
+    print("What kind of chess would you like to play? \n1. Rapid (10+0)\n2. Classical (30+0)\n3. Custom")
+    while True:
+        num = input("Please choose from either 1 (Rapid, 10+0) or 2 (Classical, 30+0) or 3 (Custom): ")
+        if num == "1":
+            return 10, 0
+        elif num == "2":
+            return 30, 0
+        elif num == "3":
+            while True:
+                time_inc = input("Please enter space separated time and increment you wish to play. E.G. '15 10':")
+                try:
+                    time, inc = time_inc.split(' ')
+                    return int(time), int(inc)
+                except:
+                    print("Invalid input.")
+
 
 def main():
     
@@ -66,22 +86,11 @@ def main():
         elif choice.lower() == "p": 
             optFlag = False
         else: print("Please choose from either P to play, H for help, or Q to quit")
-        
-    print("What kind of chess would you like to play? \n1. Rapid (10+0)\n2. Classical (30+0)\n")
-    num = input("Please choose from either 1 (Rapid, 10+0) or 2 (Classical, 30+0): ")
-    typeFlag = True # Flag for gametype validation
-    while typeFlag == True:
-        if num=="1":
-            time=10
-            typeFlag = False
-        elif num=="2":
-            time=30
-            typeFlag = False
-        else:
-            num = input("Please choose from either 1 (Rapid, 10+0) or 2 (Classical, 30+0): ")
+
+    time, increment = get_game_type_input()
 
     print("Searching after opponent...")
-    board.seek(time, 0)
+    board.seek(time, increment)
 
     for event in board.stream_incoming_events():
         if event['type'] == 'gameStart':
