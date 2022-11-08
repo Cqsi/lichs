@@ -66,8 +66,7 @@ class Game(threading.Thread):
             # there's no "amount of turns" variable in the JSON, so we have to construct one manually
             turn = len(game_state["moves"].split())-1
             if turn%2 == self.isWhite:
-
-                print(self.color + " moved.")
+                print(f'{self.color} moved {game_state["moves"].split(" ")[-1]}.')
                 print()
 
                 chess_board.push_uci(game_state["moves"].split()[-1])
