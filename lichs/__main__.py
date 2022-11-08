@@ -6,8 +6,8 @@ from typing import Tuple
 from pathlib import Path
 from getpass import getpass
 
-from lichs.Game import Game
-from lichs.api_key import set_api
+from Game import Game
+from api_key import set_api
 
 token_file = Path(__file__).parent.absolute() / "token.key"
 

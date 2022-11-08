@@ -36,7 +36,7 @@ class Game(threading.Thread):
 
         global chess_board
 
-        if game_state[self.color[0].lower() + "draw"] == True:
+        if game_state.get(self.color[0].lower() + "draw") is True:
             self.handle_draw_state(game_state)
         elif game_state["status"] == "resign":
             print("The opponent resigned. Congrats!")
@@ -84,8 +84,9 @@ class Game(threading.Thread):
                                 self.clock['white'] -= datetime.datetime.now() - move_start
                             else:
                                 self.clock['black'] -= datetime.datetime.now() - move_start
-                    except:
+                    except Exception as e:
                         print("You can't make that move. Try again!")
+                        print(f"Reason: {e}") 
                         continue
                     break
 
@@ -120,8 +121,9 @@ class Game(threading.Thread):
                 else:
                     self.board.make_move(self.game_id, chess_board.parse_san(move))
                     chess_board.push_san(move)
-            except:
+            except Exception as e:
                 print("You can't make that move. Try again!")
+                print(f'Reason: {e}')
                 continue
             break
 
@@ -160,3 +162,4 @@ class Game(threading.Thread):
         print("[%02d:%02d : %02d:%02d]" % (self.clock['white'].minute, self.clock['white'].second, 
                                            self.clock['black'].minute, self.clock['black'].second))
         print()
+
